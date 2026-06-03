@@ -1,8 +1,7 @@
 AddCSLuaFile()
 
-SWEP.PrintName = "Axe"
-SWEP.Description = "A simple axe, with balanced stats across the board in terms of damage, range and swing speed."
-
+SWEP.PrintName = "Топор"
+SWEP.Description = "Простой топор со сбалансированными характеристиками урона, дальности атаки и скорости взмаха."
 if CLIENT then
 	SWEP.ViewModelFOV = 55
 	SWEP.ViewModelFlip = false

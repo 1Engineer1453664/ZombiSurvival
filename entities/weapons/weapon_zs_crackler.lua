@@ -1,8 +1,7 @@
 AddCSLuaFile()
 
-SWEP.PrintName = "'Crackler' Assault Rifle"
-SWEP.Description = "An unsophisticated assault rifle which has good damage and accuracy."
-
+SWEP.PrintName = "Штурмовая винтовка 'Crackler'"
+SWEP.Description = "Простая штурмовая винтовка с хорошим уроном и точностью."
 SWEP.Slot = 2
 SWEP.SlotPos = 0
 

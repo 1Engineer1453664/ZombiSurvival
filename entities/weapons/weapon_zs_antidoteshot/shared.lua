@@ -1,5 +1,5 @@
-SWEP.PrintName = "'Purger' Antidote Handgun"
-SWEP.Description = "Fires piercing antidote blasts. Heals poison and cleanses statuses."
+SWEP.PrintName = "Пистолет-антидот 'Purger'"
+SWEP.Description = "Стреляет пробивающими зарядами антидота. Излечивает яд и снимает негативные эффекты."
 SWEP.Slot = 4
 SWEP.SlotPos = 0
 

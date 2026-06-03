@@ -2,7 +2,7 @@ AddCSLuaFile()
 
 SWEP.Base = "weapon_zs_zombie"
 
-SWEP.PrintName = "Agile Dead"
+SWEP.PrintName = "Быстрый мертвец"
 
 SWEP.MeleeDamage = 20
 SWEP.Primary.Delay = 1.2

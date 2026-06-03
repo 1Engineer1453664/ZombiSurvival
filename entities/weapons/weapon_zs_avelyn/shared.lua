@@ -1,6 +1,5 @@
-SWEP.PrintName = "'Avelyn' Multi Crossbow"
-SWEP.Description = "A triple loaded crossbow. Slow to reload, but very high burst damage."
-
+SWEP.PrintName = "Мультиарбалет 'Avelyn'"
+SWEP.Description = "Тройной заряженный арбалет. Долго перезаряжается, но наносит огромный взрывной урон очередью."
 SWEP.Base = "weapon_zs_baseproj"
 DEFINE_BASECLASS("weapon_zs_baseproj")
 

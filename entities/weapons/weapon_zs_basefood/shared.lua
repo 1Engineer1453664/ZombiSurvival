@@ -1,6 +1,6 @@
 SWEP.Base = "weapon_zs_basemelee"
 
-SWEP.PrintName = "Food"
+SWEP.PrintName = "Еда"
 SWEP.Slot = 4
 SWEP.SlotPos = 0
 

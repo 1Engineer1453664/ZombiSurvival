@@ -2,8 +2,7 @@ AddCSLuaFile()
 
 SWEP.Base = "weapon_zs_headcrab"
 
-SWEP.PrintName = "Bloodsucker Headcrab"
-
+SWEP.PrintName = "Хедкраб-кровосос"
 SWEP.PounceDamage = 6
 
 SWEP.NoHitRecovery = 0.6

@@ -1,8 +1,7 @@
 AddCSLuaFile()
 
-SWEP.PrintName = "Corrupted Fragment"
-SWEP.Description = "An eerie stone which returns you to corrupted Sanity Sigils."
-
+SWEP.PrintName = "Искажённый фрагмент"
+SWEP.Description = "Жуткий камень, который возвращает вас к искажённым знакам здравомыслия."
 SWEP.Base = "weapon_zs_sigilfragment"
 
 if CLIENT then

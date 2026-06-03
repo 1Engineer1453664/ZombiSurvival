@@ -1,6 +1,6 @@
 AddCSLuaFile()
 
-SWEP.PrintName = "Bloated Zombie"
+SWEP.PrintName = "Раздувшийся зомби"
 
 SWEP.Base = "weapon_zs_zombie"
 

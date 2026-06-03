@@ -1,4 +1,4 @@
-SWEP.PrintName = "Giant Zombie Kung Fu"
+SWEP.PrintName = "Кунг-фу Гигантского зомби"
 
 SWEP.Base = "weapon_zs_zombie"
 

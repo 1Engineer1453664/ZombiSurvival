@@ -1,6 +1,6 @@
 SWEP.Base = "weapon_zs_poisonheadcrab"
 
-SWEP.PrintName = "Barbed Headcrab"
+SWEP.PrintName = "Шипастый хедкраб"
 
 SWEP.PounceDamage = 36
 

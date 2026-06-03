@@ -909,27 +909,116 @@ function GM:HumanHUD(screenscale)
 	end
 end
 
+-- Задаем цвета для шкалы один раз вне функции, чтобы не нагружать память каждый кадр
+local colUltBG = Color(5, 5, 5, 180)
+local colUltFill = Color(200, 50, 50, 255)  -- Красный (копится)
+local colUltReady = Color(50, 200, 50, 255) -- Зеленый (готово)
+-- Способность (абилка от урона)
 function GM:_HUDPaint()
-	if self.FilmMode then return end
+    if self.FilmMode then return end
 
-	local screenscale = BetterScreenScale()
-	local myteam = P_Team(MySelf)
+    local screenscale = BetterScreenScale()
+    local myteam = P_Team(MySelf)
 
-	self:HUDDrawTargetID(myteam, screenscale)
+    self:HUDDrawTargetID(myteam, screenscale)
 
-	if self:GetWave() > 0 then
-		self:DrawFearMeter(self:CachedFearPower(), screenscale)
-	end
+    if self:GetWave() > 0 then
+        self:DrawFearMeter(self:CachedFearPower(), screenscale)
+    end
 
-	if myteam == TEAM_UNDEAD then
-		self:ZombieHUD()
-	elseif myteam == TEAM_HUMAN then
-		self:HumanHUD(screenscale)
-	end
+    if myteam == TEAM_UNDEAD then
+        self:ZombieHUD()
+    elseif myteam == TEAM_HUMAN then
+        self:HumanHUD(screenscale)
 
-	if GetGlobalBool("classicmode") then
-		draw_SimpleTextBlurry(translate.Get("classic_mode"), "ZSHUDFontSmaller", 4, ScrH() - 4, COLOR_GRAY, TEXT_ALIGN_LEFT, TEXT_ALIGN_BOTTOM_REAL)
-	end
+        -- ================= УНИВЕРСАЛЬНАЯ ШКАЛА АБИЛКИ (ФИКС ПОЛОСКИ) =================
+        if IsValid(MySelf) then
+            local wep = MySelf:GetActiveWeapon()
+            
+            -- Проверяем, что это наше кастомное оружие с поддержкой ульты
+            if IsValid(wep) and wep.IsUltimateWeapon and wep.GetUltimateCharge then
+                
+                -- НАСТРОЙКИ РАЗМЕРОВ ШКАЛЫ
+                local barW = 300 * screenscale -- Ширина полоски
+                local barH = 20 * screenscale  -- Высота полоски
+                
+                -- Позиция шкалы (правый нижний угол)
+                local barX = ScrW() - barW - 60
+                local barY = ScrH() - barH - 80
+
+                local fraction = 0
+                local is_active = false
+
+                -- Проверяем состояние оружия
+                if wep.IsUltActive and wep:IsUltActive() then
+                    is_active = true
+                    fraction = 0 -- КРИТИЧЕСКИЙ ФИКС: При активации принудительно делаем шкалу ПУСТОЙ (0%)
+                else
+                    fraction = math.Clamp(wep:GetUltimateCharge() or 0, 0, 1)
+                end
+
+                -- 1. ТЕКСТ НАД ШКАЛОЙ (УПРАВЛЕНИЕ ЦВЕТОМ)
+                surface.SetFont("ZSHUDFontSmall") -- Крупный жирный шрифт
+                
+                local topText = string.upper(wep.UltimateName or "СПОСОБНОСТЬ")
+                
+                if is_active then
+                    surface.SetTextColor(255, 50, 50, 255)   -- КРАСНЫЙ во время действия абилки
+                elseif fraction >= 1 then
+                    surface.SetTextColor(70, 255, 70, 255)   -- ЗЕЛЕНЫЙ, когда способность заряжена на 100%
+                else
+                    surface.SetTextColor(255, 50, 50, 255)  -- КРАСНЫЙ, пока способность копится
+                end
+
+                local tw, th = surface.GetTextSize(topText)
+                surface.SetTextPos(barX + (barW / 2) - (tw / 2), barY - th - 6)
+                surface.DrawText(topText)
+
+
+                -- ПОЛОСКА ТЕПЕРЬ ОСТАЕТСЯ НА ЭКРАНЕ ВСЕГДА
+                -- 2. РИСУЕМ ПОДЛОЖКУ ШКАЛЫ
+                draw.RoundedBox(4, barX, barY, barW, barH, colUltBG)
+                
+                -- Рисуем заполнение полоски (сработает только если fraction > 0, то есть НЕ во время ульты)
+                if fraction > 0 then
+                    local fillW = (barW - 4) * fraction 
+                    
+                    local cornerRadius = 4
+                    if fillW < 5 then 
+                        cornerRadius = 0 
+                    end
+
+                    if fillW > 0.5 then
+                        local barColor = (fraction >= 1) and colUltReady or colUltFill
+                        draw.RoundedBox(cornerRadius, barX + 2, barY + 2, fillW, barH - 4, barColor)
+                    end
+                end
+
+                -- 3. ТЕКСТ ВНУТРИ ПОЛОСКИ
+                surface.SetFont("ZSHUDFontTiny")
+                local insideText = ""
+
+                if is_active then
+                    insideText = "0%" -- Во время активации внутри пишется 0%, как при начале накопления
+                elseif fraction >= 1 then
+                    insideText = wep.UltimateReadyText or "ГОТОВО [R]"
+                else
+                    insideText = math.Round(fraction * 100) .. "%"
+                end
+
+                surface.SetTextColor(255, 255, 255, 255)
+                local iw, ih = surface.GetTextSize(insideText)
+                surface.SetTextPos(barX + (barW / 2) - (iw / 2), barY + (barH / 2) - (ih / 2))
+                surface.DrawText(insideText)
+
+            end
+        end
+        -- ===================================================================================
+    end
+
+    if GetGlobalBool("classicmode") then
+        draw_SimpleTextBlurry(translate.Get("classic_mode"), "ZSHUDFontSmaller", 4, ScrH() - 4, COLOR_GRAY, TEXT_ALIGN_LEFT, TEXT_ALIGN_BOTTOM_REAL)
+    end
 end
 
 function GM:ZombieObserverHUD(obsmode)

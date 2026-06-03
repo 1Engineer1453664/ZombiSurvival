@@ -1,6 +1,6 @@
 AddCSLuaFile()
 
-SWEP.PrintName = "Bust-on-a-stick"
+SWEP.PrintName = "Бюст на палке"
 
 if CLIENT then
 	SWEP.ViewModelFOV = 70

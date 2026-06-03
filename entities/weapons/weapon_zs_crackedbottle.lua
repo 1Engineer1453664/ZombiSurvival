@@ -1,8 +1,7 @@
 AddCSLuaFile()
 
-SWEP.PrintName = "Cracked Bottle"
-SWEP.Description = "A cracked bottle."
-
+SWEP.PrintName = "Разбитая бутылка"
+SWEP.Description = "Разбитая бутылка."
 if CLIENT then
 	SWEP.ViewModelFOV = 55
 	SWEP.VElements = {

@@ -1,10 +1,8 @@
 AddCSLuaFile()
 
 SWEP.Base = "weapon_zs_baseshotgun"
-
-SWEP.PrintName = "'Blaster' Shotgun"
-SWEP.Description = "A basic shotgun that can deal significant amounts of damage at close range."
-
+SWEP.PrintName = "Дробовик 'Blaster'"
+SWEP.Description = "Базовый дробовик, способный наносить значительный урон на ближней дистанции."
 if CLIENT then
 	SWEP.ViewModelFlip = false
 

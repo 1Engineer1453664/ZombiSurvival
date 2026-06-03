@@ -2,9 +2,8 @@ AddCSLuaFile()
 
 SWEP.Base = "weapon_zs_fists"
 
-SWEP.PrintName = "Brass Knuckles"
-SWEP.Description = "A pair of brass knuckles used to concentrate strikes from one's fists, increasing the damage done, while keeping their movement speed up."
-
+SWEP.PrintName = "Кастеты"
+SWEP.Description = "Пара кастетов, используемая для концентрации ударов кулаками, что увеличивает наносимый урон и сохраняет высокую скорость передвижения."
 if CLIENT then
 	SWEP.ViewModelFOV = 52
 	SWEP.ViewModelFlip = false

@@ -1,6 +1,5 @@
 AddCSLuaFile()
-
-SWEP.PrintName = "'Blareduct' Zip Gun"
+SWEP.PrintName = "Самопал 'Blareduct'"
 SWEP.Slot = 3
 SWEP.SlotPos = 0
 

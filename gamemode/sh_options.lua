@@ -367,6 +367,7 @@ GM:AddPointShopItem("crossbowammo",		ITEMCAT_AMMO,			8,				nil,							"8 crossbo
 GM:AddPointShopItem("assaultrifleammo",	ITEMCAT_AMMO,			8,				nil,							"32 assault rifle ammo",		nil,									"ammo_assault",						function(pl) pl:GiveAmmo(32, "ar2", true) end)
 GM:AddPointShopItem("pulseammo",		ITEMCAT_AMMO,			8,				nil,							"30 pulse ammo",				nil,									"ammo_pulse",						function(pl) pl:GiveAmmo(30, "pulse", true) end)
 GM:AddPointShopItem("impactmine",		ITEMCAT_AMMO,			8,				nil,							"3 explosives",					nil,									"ammo_explosive",					function(pl) pl:GiveAmmo(3, "impactmine", true) end)
+GM:AddPointShopItem("SCRAP",     		ITEMCAT_AMMO,			10,				nil,							"10 scrap",    				    nil,									"ammo_scrap",						function(pl) pl:GiveAmmo(10, "SCRAP", true) end)
 GM:AddPointShopItem("chemical",			ITEMCAT_AMMO,			8,				nil,							"20 chemical vials",			nil,									"ammo_chemical",					function(pl) pl:GiveAmmo(20, "chemical", true) end)
 item =
 GM:AddPointShopItem("25mkit",			ITEMCAT_AMMO,			15,				nil,							"25 Medical Kit power",			"25 extra power for the Medical Kit.",	"ammo_medpower",					function(pl) pl:GiveAmmo(25, "Battery", true) end)

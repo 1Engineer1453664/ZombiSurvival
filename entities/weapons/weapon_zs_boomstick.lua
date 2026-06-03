@@ -2,9 +2,8 @@ AddCSLuaFile()
 
 SWEP.Base = "weapon_zs_baseshotgun"
 
-SWEP.PrintName = "Boom Stick"
-SWEP.Description = "This shotgun allows you to load up to four shells in the chamber at once. Hold down reload for faster loading of each shell."
-
+SWEP.PrintName = "Громобой"
+SWEP.Description = "Этот дробовик позволяет заряжать до четырех патронов в патронник одновременно. Удерживайте клавишу перезагрузки для более быстрого досылания каждого патрона."
 if CLIENT then
 	SWEP.HUD3DBone = "ValveBiped.Gun"
 	SWEP.HUD3DPos = Vector(1.65, 0, -8)

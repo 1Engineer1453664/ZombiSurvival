@@ -1,8 +1,8 @@
 AddCSLuaFile()
 DEFINE_BASECLASS("weapon_zs_base")
 
-SWEP.PrintName = "'Bullet Storm' SMG"
-SWEP.Description = "Hold right click to use the Storm firing mode: fire rate is reduced to 60% but two bullets are fired at once."
+SWEP.PrintName = "ПП 'Bullet Storm'"
+SWEP.Description = "Удерживайте правую кнопку мыши, чтобы использовать режим «Шторм»: скорострельность снижается до 60%, но одновременно выпускаются две пули."
 SWEP.Slot = 2
 SWEP.SlotPos = 0
 

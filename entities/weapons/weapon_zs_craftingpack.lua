@@ -2,9 +2,8 @@ AddCSLuaFile()
 
 SWEP.Base = "weapon_zs_boardpack"
 
-SWEP.PrintName = "Crafting Pack"
-SWEP.Description = "A pack of assorted items which seem to have greater use when combined with other things."
-
+SWEP.PrintName = "Набор мусора"
+SWEP.Description = "Набор различных предметов, которые могут принести гораздо больше пользы, если объединить их с чем-то ещё."
 function SWEP:Initialize()
 	self.JunkModels = {
 		Model("models/props_combine/breenbust.mdl"),
