@@ -144,7 +144,7 @@ function(wept)
     wept.UltimateDuration  = 6   -- секунд действия
 
     -- Слот 30 (UltDamage) переиспользуем как прогресс 0..1
-    -- Никаких новых NetworkVar не нужно!
+   
     wept.GetUltimateCharge = function(self)
         return self:GetUltDamage()   -- теперь хранит 0..1 вместо урона
     end
