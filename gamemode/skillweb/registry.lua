@@ -351,317 +351,310 @@ local GOOD = "^"..COLORID_GREEN
 local BAD = "^"..COLORID_RED
 
 -- Health Tree
-GM:AddSkill(SKILL_STOIC1, "Stoic I", GOOD.."+1 maximum health\n"..BAD.."-0.75 movement speed",
-																-4,			-6,					{SKILL_NONE, SKILL_STOIC2}, TREE_HEALTHTREE)
-GM:AddSkill(SKILL_STOIC2, "Stoic II", GOOD.."+2 maximum health\n"..BAD.."-1.5 movement speed",
-																-4,			-4,					{SKILL_STOIC3, SKILL_VITALITY1, SKILL_REGENERATOR}, TREE_HEALTHTREE)
-GM:AddSkill(SKILL_STOIC3, "Stoic III", GOOD.."+4 maximum health\n"..BAD.."-3 movement speed",
-																-3,			-2,					{SKILL_STOIC4}, TREE_HEALTHTREE)
-GM:AddSkill(SKILL_STOIC4, "Stoic IV", GOOD.."+6 maximum health\n"..BAD.."-4.5 movement speed",
-																-3,			0,					{SKILL_STOIC5}, TREE_HEALTHTREE)
-GM:AddSkill(SKILL_STOIC5, "Stoic V", GOOD.."+7 maximum health\n"..BAD.."-5.25 movement speed",
-																-3,			2,					{SKILL_BLOODARMOR, SKILL_TANKER}, TREE_HEALTHTREE)
-GM:AddSkill(SKILL_D_HEMOPHILIA, "Debuff: Hemophilia", GOOD.."+10 starting Worth\n"..GOOD.."+3 starting scrap\n"..BAD.."Bleed for 25% extra damage when hit",
-																4,			2,					{}, TREE_HEALTHTREE)
-GM:AddSkill(SKILL_GLUTTON, "Glutton", GOOD.."Gain up to 30 blood armor when you eat food\n"..GOOD.."Blood armor gained can exceed the cap by 40\n"..BAD.."-5 maximum health\n"..BAD.."No longer receive health from eating food",
-																3,			-2,					{SKILL_GOURMET, SKILL_BLOODARMOR}, TREE_HEALTHTREE)
-GM:AddSkill(SKILL_PREPAREDNESS, "Preparedness", GOOD.."Your starting item can be a random food item",
-																4,			-6,					{SKILL_NONE}, TREE_HEALTHTREE)
-GM:AddSkill(SKILL_GOURMET, "Gourmet", GOOD.."+100% recovery from food\n"..BAD.."+200% time to eat food",
-																4,			-4,					{SKILL_PREPAREDNESS, SKILL_VITALITY1}, TREE_HEALTHTREE)
-GM:AddSkill(SKILL_HAEMOSTASIS, "Haemostasis", GOOD.."Resist status effects while you have at least 2 blood armor\n"..BAD.."Lose 2 blood armor on resist\n"..BAD.."-25% blood armor damage absorption",
-																4,			6,					{}, TREE_HEALTHTREE)
-GM:AddSkill(SKILL_BLOODLETTER, "Bloodletter", GOOD.."+100% blood armor generated\n"..BAD.."Losing all blood armor inflicts 5 bleed damage",
-																0,			4,					{SKILL_ANTIGEN}, TREE_HEALTHTREE)
-GM:AddSkill(SKILL_REGENERATOR, "Regenerator", GOOD.."Regenerate 1 health every 6s when below 60% health\n"..BAD.."-6 maximum health",
-																-5,			-2,					{}, TREE_HEALTHTREE)
-GM:AddSkill(SKILL_BLOODARMOR, "Blood Armor", GOOD.."Regenerate 1 blood armor every 8 seconds upto your blood armor max\nBase blood armor maximum is 20\nBase blood armor damage absorption is 50%\n"..BAD.."-13 maximum health",
-																2,			2,					{SKILL_IRONBLOOD, SKILL_BLOODLETTER, SKILL_D_HEMOPHILIA}, TREE_HEALTHTREE)
-GM:AddSkill(SKILL_IRONBLOOD, "Iron Blood", GOOD.."+25% damage reduction from blood armor\n"..GOOD.."Bonus doubled when health is 50% or less\n"..BAD.."-50% maximum blood armor",
-																2,			4,					{SKILL_HAEMOSTASIS, SKILL_CIRCULATION}, TREE_HEALTHTREE)
-GM:AddSkill(SKILL_D_WEAKNESS, "Debuff: Weakness", GOOD.."+15 starting Worth\n"..GOOD.."+1 end of wave points\n"..BAD.."-45 maximum health",
-																1,			-1,					{}, TREE_HEALTHTREE)
-GM:AddSkill(SKILL_VITALITY1, "Vitality I", GOOD.."+1 maximum health",
-																0,			-4,					{SKILL_VITALITY2}, TREE_HEALTHTREE)
-GM:AddSkill(SKILL_VITALITY2, "Vitality II", GOOD.."+1 maximum health",
-																0,			-2,					{SKILL_VITALITY3}, TREE_HEALTHTREE)
-GM:AddSkill(SKILL_VITALITY3, "Vitality III", GOOD.."+1 maximum health",
-																0,			-0,					{SKILL_D_WEAKNESS}, TREE_HEALTHTREE)
-GM:AddSkill(SKILL_TANKER, "Tanker", GOOD.."+20 maximum health\n"..BAD.."-15 movement speed",
-																-5,			4,					{}, TREE_HEALTHTREE)
-GM:AddSkill(SKILL_FORAGER, "Forager", GOOD.."25% chance to collect food from resupply boxes\n"..BAD.."+20% resupply box delay",
-																5,			-2,					{SKILL_GOURMET}, TREE_HEALTHTREE)
-GM:AddSkill(SKILL_SUGARRUSH, "Sugar Rush", GOOD.."+35 speed boost from food for 14 seconds\n"..BAD.."-35% recovery from food\n",
-																4,			0,					{SKILL_GOURMET}, TREE_HEALTHTREE)
-GM:AddSkill(SKILL_CIRCULATION, "Circulation", GOOD.."+1 maximum blood armor",
-																4,			4,					{SKILL_SANGUINE}, TREE_HEALTHTREE)
-GM:AddSkill(SKILL_SANGUINE, "Sanguine", GOOD.."+11 maximum blood armor\n"..BAD.."-9 maximum health",
-																6,			2,					{}, TREE_HEALTHTREE)
-GM:AddSkill(SKILL_ANTIGEN, "Antigen", GOOD.."+5% blood armor damage absorption\n"..BAD.."-3 maximum health",
-																-2,			4,					{}, TREE_HEALTHTREE)
+GM:AddSkill(SKILL_STOIC1, "Стойкость I", GOOD.."+1 к макс. здоровью\n"..BAD.."-0.75 к скорости передвижения",
+                                                                -4,         -6,                 {SKILL_NONE, SKILL_STOIC2}, TREE_HEALTHTREE)
+GM:AddSkill(SKILL_STOIC2, "Стойкость II", GOOD.."+2 к макс. здоровью\n"..BAD.."-1.5 к скорости передвижения",
+                                                                -4,         -4,                 {SKILL_STOIC3, SKILL_VITALITY1, SKILL_REGENERATOR}, TREE_HEALTHTREE)
+GM:AddSkill(SKILL_STOIC3, "Стойкость III", GOOD.."+4 к макс. здоровью\n"..BAD.."-3 к скорости передвижения",
+                                                                -3,         -2,                 {SKILL_STOIC4}, TREE_HEALTHTREE)
+GM:AddSkill(SKILL_STOIC4, "Стойкость IV", GOOD.."+6 к макс. здоровью\n"..BAD.."-4.5 к скорости передвижения",
+                                                                -3,         0,                  {SKILL_STOIC5}, TREE_HEALTHTREE)
+GM:AddSkill(SKILL_STOIC5, "Стойкость V", GOOD.."+7 к макс. здоровью\n"..BAD.."-5.25 к速度 передвижения",
+                                                                -3,         2,                  {SKILL_BLOODARMOR, SKILL_TANKER}, TREE_HEALTHTREE)
+GM:AddSkill(SKILL_D_HEMOPHILIA, "Дебафф: Гемофилия", GOOD.."+10 к начальной ценности\n"..GOOD.."+3 к начальному металлолому\n"..BAD.."При получении урона начинается кровотечение, наносящее 25% доп. урона",
+                                                                4,          2,                  {}, TREE_HEALTHTREE)
+GM:AddSkill(SKILL_GLUTTON, "Обжора", GOOD.."Получаете до 30 ед. кровавой брони при употреблении еды\n"..GOOD.."Полученная броня может превышать лимит на 40 ед.\n"..BAD.."-5 к макс. здоровью\n"..BAD.."Еда больше не восстанавливает здоровье",
+                                                                3,          -2,                 {SKILL_GOURMET, SKILL_BLOODARMOR}, TREE_HEALTHTREE)
+GM:AddSkill(SKILL_PREPAREDNESS, "Запасливость", GOOD.."Вашим стартовым предметом может стать случайная еда",
+                                                                4,          -6,                 {SKILL_NONE}, TREE_HEALTHTREE)
+GM:AddSkill(SKILL_GOURMET, "Гурман", GOOD.."+100% к восстановлению от еды\n"..BAD.."+200% ко времени употребления еды",
+                                                                4,          -4,                 {SKILL_PREPAREDNESS, SKILL_VITALITY1}, TREE_HEALTHTREE)
+GM:AddSkill(SKILL_HAEMOSTASIS, "Гемостаз", GOOD.."Сопротивление негативным эффектам, пока у вас есть хотя бы 2 ед. кровавой брони\n"..BAD.."Теряете 2 ед. кровавой брони при сопротивлении\n"..BAD.."-25% к поглощению урона кровавой броней",
+                                                                4,          6,                  {}, TREE_HEALTHTREE)
+GM:AddSkill(SKILL_BLOODLETTER, "Кровопускатель", GOOD.."+100% к генерации кровавой брони\n"..BAD.."Потеря всей кровавой брони наносит 5 ед. урона от кровотечения",
+                                                                0,          4,                  {SKILL_ANTIGEN}, TREE_HEALTHTREE)
+GM:AddSkill(SKILL_REGENERATOR, "Regenerator", GOOD.."Восстанавливает 1 ед. здоровья каждые 6 сек., если здоровье ниже 60%\n"..BAD.."-6 к макс. здоровью",
+                                                                -5,         -2,                 {}, TREE_HEALTHTREE)
+GM:AddSkill(SKILL_BLOODARMOR, "Кровавая броня", GOOD.."Восстанавливает 1 ед. кровавой брони каждые 8 сек. до максимума\nБазовый макс. кровавой брони: 20\nБазовое поглощение урона: 50%\n"..BAD.."-13 к макс. здоровью",
+                                                                2,          2,                  {SKILL_IRONBLOOD, SKILL_BLOODLETTER, SKILL_D_HEMOPHILIA}, TREE_HEALTHTREE)
+GM:AddSkill(SKILL_IRONBLOOD, "Железная кровь", GOOD.."+25% к снижению урона от кровавой брони\n"..GOOD.."Бонус удваивается, если здоровье равно 50% или ниже\n"..BAD.."-50% к макс. кровавой брони",
+                                                                2,          4,                  {SKILL_HAEMOSTASIS, SKILL_CIRCULATION}, TREE_HEALTHTREE)
+GM:AddSkill(SKILL_D_WEAKNESS, "Дебафф: Слабость", GOOD.."+15 к начальной ценности\n"..GOOD.."+1 очко в конце волны\n"..BAD.."-45 к макс. здоровью",
+                                                                1,          -1,                 {}, TREE_HEALTHTREE)
+GM:AddSkill(SKILL_VITALITY1, "Живучесть I", GOOD.."+1 к макс. здоровью",
+                                                                0,          -4,                 {SKILL_VITALITY2}, TREE_HEALTHTREE)
+GM:AddSkill(SKILL_VITALITY2, "Живучесть II", GOOD.."+1 к макс. здоровью",
+                                                                0,          -2,                 {SKILL_VITALITY3}, TREE_HEALTHTREE)
+GM:AddSkill(SKILL_VITALITY3, "Живучесть III", GOOD.."+1 к макс. здоровью",
+                                                                0,          -0,                 {SKILL_D_WEAKNESS}, TREE_HEALTHTREE)
+GM:AddSkill(SKILL_TANKER, "Танк", GOOD.."+20 к макс. здоровью\n"..BAD.."-15 к скорости передвижения",
+                                                                -5,         4,                  {}, TREE_HEALTHTREE)
+GM:AddSkill(SKILL_FORAGER, "Добытчик", GOOD.."25% шанс найти еду в ящике с припасами\n"..BAD.."+20% к задержке использования ящика с припасами",
+                                                                5,          -2,                 {SKILL_GOURMET}, TREE_HEALTHTREE)
+GM:AddSkill(SKILL_SUGARRUSH, "Сахарная лихорадка", GOOD.."+35 к скорости от еды на 14 секунд\n"..BAD.."-35% к восстановлению от еды\n",
+                                                                4,          0,                  {SKILL_GOURMET}, TREE_HEALTHTREE)
+GM:AddSkill(SKILL_CIRCULATION, "Циркуляция", GOOD.."+1 к макс. кровавой брони",
+                                                                4,          4,                  {SKILL_SANGUINE}, TREE_HEALTHTREE)
+GM:AddSkill(SKILL_SANGUINE, "Сангвиник", GOOD.."+11 к макс. кровавой брони\n"..BAD.."-9 к макс. здоровью",
+                                                                6,          2,                  {}, TREE_HEALTHTREE)
+GM:AddSkill(SKILL_ANTIGEN, "Антиген", GOOD.."+5% к поглощению урона кровавой броней\n"..BAD.."-3 к макс. здоровью",
+                                                                -2,         4,                  {}, TREE_HEALTHTREE)
 -- Speed Tree
-GM:AddSkill(SKILL_SPEED1, "Speed I", GOOD.."+0.75 movement speed\n"..BAD.."-1 maximum health",
-																-4,			6,					{SKILL_NONE, SKILL_SPEED2}, TREE_SPEEDTREE)
-GM:AddSkill(SKILL_SPEED2, "Speed II", GOOD.."+1.5 movement speed\n"..BAD.."-2 maximum health",
-																-4,			4,					{SKILL_SPEED3, SKILL_PHASER, SKILL_SPEED2, SKILL_U_CORRUPTEDFRAGMENT}, TREE_SPEEDTREE)
-GM:AddSkill(SKILL_SPEED3, "Speed III", GOOD.."+3 movement speed\n"..BAD.."-4 maximum health",
-																-4,			2,					{SKILL_SPEED4}, TREE_SPEEDTREE)
-GM:AddSkill(SKILL_SPEED4, "Speed IV", GOOD.."+4.5 movement speed\n"..BAD.."-6 maximum health",
-																-4,			0,					{SKILL_SPEED5, SKILL_SAFEFALL}, TREE_SPEEDTREE)
-GM:AddSkill(SKILL_SPEED5, "Speed V", GOOD.."+5.25 movement speed\n"..BAD.."-7 maximum health",
-																-4,			-2,					{SKILL_ULTRANIMBLE, SKILL_BACKPEDDLER, SKILL_MOTIONI, SKILL_CARDIOTONIC, SKILL_UNBOUND}, TREE_SPEEDTREE)
-GM:AddSkill(SKILL_AGILEI, "Agile I", GOOD.."+4% jumping power\n"..BAD.."-2 movement speed",
-																4,			6,					{SKILL_NONE, SKILL_AGILEII}, TREE_SPEEDTREE)
-GM:AddSkill(SKILL_AGILEII, "Agile II", GOOD.."+5% jumping power\n"..BAD.."-3 movement speed",
-																4,			2,					{SKILL_AGILEIII, SKILL_WORTHINESS3}, TREE_SPEEDTREE)
-GM:AddSkill(SKILL_AGILEIII, "Agile III", GOOD.."+6% jumping power\n"..BAD.."-4 movement speed",
-																4,			-2,					{SKILL_SAFEFALL, SKILL_ULTRANIMBLE, SKILL_SURESTEP, SKILL_INTREPID}, TREE_SPEEDTREE)
-GM:AddSkill(SKILL_D_SLOW, "Debuff: Slow", GOOD.."+15 starting Worth\n"..GOOD.."+1 end of wave points\n"..BAD.."-33.75 movement speed",
-																0,			-4,					{}, TREE_SPEEDTREE)
-GM:AddSkill(SKILL_MOTIONI, "Motion I", GOOD.."+0.75 movement speed",
-																-2,			-2,					{SKILL_MOTIONII}, TREE_SPEEDTREE)
-GM:AddSkill(SKILL_MOTIONII, "Motion II", GOOD.."+0.75 movement speed",
-																-1,			-1,					{SKILL_MOTIONIII}, TREE_SPEEDTREE)
-GM:AddSkill(SKILL_MOTIONIII, "Motion III", GOOD.."+0.75 movement speed",
-																0,			-2,					{SKILL_D_SLOW}, TREE_SPEEDTREE)
-GM:AddSkill(SKILL_BACKPEDDLER, "Backpeddler", GOOD.."Move the same speed in all directions\n"..BAD.."-7 movement speed\n"..BAD.."Receive leg damage on any melee hit",
-																-6,			0,					{}, TREE_SPEEDTREE)
-GM:AddSkill(SKILL_PHASER, "Phaser", GOOD.."+15% barricade phasing movement speed\n"..BAD.."+15% sigil teleportation time",
-																-1,			4,					{SKILL_D_WIDELOAD, SKILL_DRIFT}, TREE_SPEEDTREE)
-GM:AddSkill(SKILL_DRIFT, "Drift", GOOD.."+5% barricade phasing movement speed",
-																1,			3,					{SKILL_WARP}, TREE_SPEEDTREE)
-GM:AddSkill(SKILL_WARP, "Warp", GOOD.."-5% sigil teleportation time",
-																2,			2,					{}, TREE_SPEEDTREE)
-GM:AddSkill(SKILL_SAFEFALL, "Safe Fall", GOOD.."-40% fall damage taken\n"..GOOD.."+50% faster fall damage knockdown recovery\n"..BAD.."+40% slow down from landing or fall damage",
-																0,			0,					{}, TREE_SPEEDTREE)
-GM:AddSkill(SKILL_D_WIDELOAD, "Debuff: Wide Load", GOOD.."+20 starting Worth\n"..GOOD.."-5% resupply delay\n"..BAD.."Phasing speed limited to 1 for the first 6 seconds of phasing",
-																1,			1,					{}, TREE_SPEEDTREE)
-GM:AddSkill(SKILL_U_CORRUPTEDFRAGMENT, "Unlock: Corrupted Fragment", GOOD.."Unlocks purchasing the Corrupted Fragment\nGoes to corrupted sigils instead",
-																-2,			2,					{}, TREE_SPEEDTREE)
-GM:AddSkill(SKILL_ULTRANIMBLE, "Ultra Nimble", GOOD.."+15 movement speed\n"..BAD.."-20 maximum health",
-																0,			-6,					{}, TREE_SPEEDTREE)
-GM:AddSkill(SKILL_WORTHINESS3, "Worthiness III", GOOD.."+5 starting worth\n"..BAD.."-3 starting points",
-																6,			2,					{}, TREE_SPEEDTREE)
-GM:AddSkill(SKILL_SURESTEP, "Sure Step", GOOD.."-30% effectiveness of slows\n"..BAD.."-4 movement speed",
-																6,			0,					{}, TREE_SPEEDTREE)
-GM:AddSkill(SKILL_INTREPID, "Intrepid", GOOD.."-35% low health slow intensity\n"..BAD.."-4 movement speed",
-																6,			-4,					{SKILL_ROBUST}, TREE_SPEEDTREE)
-GM:AddSkill(SKILL_ROBUST, "Robust", GOOD.."-6% movement speed reduction with heavy weapons",
-																5,			-5,					{}, TREE_SPEEDTREE)
-GM:AddSkill(SKILL_CARDIOTONIC, "Cardiotonic", GOOD.."Hold shift to run whilst draining blood armor\n"..BAD.."-12 movement speed\n"..BAD.."-20% blood armor damage absorption\nSprinting grants +40 move speed",
-																-6,			-4,					{}, TREE_SPEEDTREE)
-GM:AddSkill(SKILL_UNBOUND, "Unbound", GOOD.."-60% reduced delay from switching weapons affecting movement speed\n"..BAD.."-4 movement speed",
-																-4,			-4,					{}, TREE_SPEEDTREE)
+GM:AddSkill(SKILL_SPEED1, "Скорость I", GOOD.."+0.75 к скорости передвижения\n"..BAD.."-1 к макс. здоровью",
+                                                                -4,         6,                  {SKILL_NONE, SKILL_SPEED2}, TREE_SPEEDTREE)
+GM:AddSkill(SKILL_SPEED2, "Скорость II", GOOD.."+1.5 к скорости передвижения\n"..BAD.."-2 к макс. здоровью",
+                                                                -4,         4,                  {SKILL_SPEED3, SKILL_PHASER, SKILL_SPEED2, SKILL_U_CORRUPTEDFRAGMENT}, TREE_SPEEDTREE)
+GM:AddSkill(SKILL_SPEED3, "Скорость III", GOOD.."+3 к скорости передвижения\n"..BAD.."-4 к макс. здоровью",
+                                                                -4,         2,                  {SKILL_SPEED4}, TREE_SPEEDTREE)
+GM:AddSkill(SKILL_SPEED4, "Скорость IV", GOOD.."+4.5 к скорости передвижения\n"..BAD.."-6 к макс. здоровью",
+                                                                -4,         0,                  {SKILL_SPEED5, SKILL_SAFEFALL}, TREE_SPEEDTREE)
+GM:AddSkill(SKILL_SPEED5, "Скорость V", GOOD.."+5.25 к скорости передвижения\n"..BAD.."-7 к макс. здоровью",
+                                                                -4,         -2,                 {SKILL_ULTRANIMBLE, SKILL_BACKPEDDLER, SKILL_MOTIONI, SKILL_CARDIOTONIC, SKILL_UNBOUND}, TREE_SPEEDTREE)
+GM:AddSkill(SKILL_AGILEI, "Подвижность I", GOOD.."+4% к силе прыжка\n"..BAD.."-2 к скорости передвижения",
+                                                                4,          6,                  {SKILL_NONE, SKILL_AGILEII}, TREE_SPEEDTREE)
+GM:AddSkill(SKILL_AGILEII, "Подвижность II", GOOD.."+5% к силе прыжка\n"..BAD.."-3 к скорости передвижения",
+                                                                4,          2,                  {SKILL_AGILEIII, SKILL_WORTHINESS3}, TREE_SPEEDTREE)
+GM:AddSkill(SKILL_AGILEIII, "Подвижность III", GOOD.."+6% к силе прыжка\n"..BAD.."-4 к скорости передвижения",
+                                                                4,          -2,                 {SKILL_SAFEFALL, SKILL_ULTRANIMBLE, SKILL_SURESTEP, SKILL_INTREPID}, TREE_SPEEDTREE)
+GM:AddSkill(SKILL_D_SLOW, "Дебафф: Замедление", GOOD.."+15 к начальной ценности\n"..GOOD.."+1 очко в конце волны\n"..BAD.."-33.75 к скорости передвижения",
+                                                                0,          -4,                 {}, TREE_SPEEDTREE)
+GM:AddSkill(SKILL_MOTIONI, "Движение I", GOOD.."+0.75 к скорости передвижения",
+                                                                -2,         -2,                 {SKILL_MOTIONII}, TREE_SPEEDTREE)
+GM:AddSkill(SKILL_MOTIONII, "Движение II", GOOD.."+0.75 к скорости передвижения",
+                                                                -1,         -1,                 {SKILL_MOTIONIII}, TREE_SPEEDTREE)
+GM:AddSkill(SKILL_MOTIONIII, "Движение III", GOOD.."+0.75 к скорости передвижения",
+                                                                0,          -2,                 {SKILL_D_SLOW}, TREE_SPEEDTREE)
+GM:AddSkill(SKILL_BACKPEDDLER, "Маневренность", GOOD.."Одинаковая скорость движения во всех направлениях\n"..BAD.."-7 к скорости передвижения\n"..BAD.."Получаете урон по ногам при любом ударе ближнего боя",
+                                                                -6,         0,                  {}, TREE_SPEEDTREE)
+GM:AddSkill(SKILL_PHASER, "Фазовый сдвиг", GOOD.."+15% к скорости прохождения сквозь баррикады\n"..BAD.."+15% ко времени телепортации к сигилу",
+                                                                -1,         4,                  {SKILL_D_WIDELOAD, SKILL_DRIFT}, TREE_SPEEDTREE)
+GM:AddSkill(SKILL_DRIFT, "Дрифт", GOOD.."+5% к скорости прохождения сквозь баррикады",
+                                                                1,          3,                  {SKILL_WARP}, TREE_SPEEDTREE)
+GM:AddSkill(SKILL_WARP, "Варп", GOOD.."-5% от времени телепортации к сигилу",
+                                                                2,          2,                  {}, TREE_SPEEDTREE)
+GM:AddSkill(SKILL_SAFEFALL, "Безопасное падение", GOOD.."-40% к получаемому урону от падения\n"..GOOD.."+50% к скорости подъема после падения\n"..BAD.."+40% к замедлению при приземлении или падении",
+                                                                0,          0,                  {}, TREE_SPEEDTREE)
+GM:AddSkill(SKILL_D_WIDELOAD, "Дебафф: Крупный габарит", GOOD.."+20 к начальной ценности\n"..GOOD.."-5% к задержке ящика с припасами\n"..BAD.."Скорость прохождения ограничена до 1 в первые 6 секунд прохождения",
+                                                                1,          1,                  {}, TREE_SPEEDTREE)
+GM:AddSkill(SKILL_U_CORRUPTEDFRAGMENT, "Разблокировка: Искаженный фрагмент", GOOD.."Открывает покупку Искаженного фрагмента\nВместо этого отправляется к искаженным сигилам",
+                                                                -2,         2,                  {}, TREE_SPEEDTREE)
+GM:AddSkill(SKILL_ULTRANIMBLE, "Сверхловкость", GOOD.."+15 к скорости передвижения\n"..BAD.."-20 к макс. здоровью",
+                                                                0,          -6,                 {}, TREE_SPEEDTREE)
+GM:AddSkill(SKILL_WORTHINESS3, "Ценность III", GOOD.."+5 к начальной ценности\n"..BAD.."-3 к стартовым очки",
+                                                                6,          2,                  {}, TREE_SPEEDTREE)
+GM:AddSkill(SKILL_SURESTEP, "Уверенный шаг", GOOD.."-30% к эффективности замедлений\n"..BAD.."-4 к скорости передвижения",
+                                                                6,          0,                  {}, TREE_SPEEDTREE)
+GM:AddSkill(SKILL_INTREPID, "Бесстрашный", GOOD.."-35% к интенсивности замедления при низком здоровье\n"..BAD.."-4 к скорости передвижения",
+                                                                6,          -4,                 {SKILL_ROBUST}, TREE_SPEEDTREE)
+GM:AddSkill(SKILL_ROBUST, "Крепкий", GOOD.."-6% к потере скорости передвижения с тяжелым оружием",
+                                                                5,          -5,                 {}, TREE_SPEEDTREE)
+GM:AddSkill(SKILL_CARDIOTONIC, "Кардиотоник", GOOD.."Удерживайте Shift для бега за счет траты кровавой брони\n"..BAD.."-12 к скорости передвижения\n"..BAD.."-20% к поглощению урона кровавой броней\nСпринт дает +40 к скорости движения",
+                                                                -6,         -4,                 {}, TREE_SPEEDTREE)
+GM:AddSkill(SKILL_UNBOUND, "Освобожденный", GOOD.."-60% к задержке смены оружия, влияющей на скорость передвижения\n"..BAD.."-4 к скорости передвижения",
+                                                                -4,         -4,                 {}, TREE_SPEEDTREE)
 -- Medic Tree
-GM:AddSkill(SKILL_SURGEON1, "Surgeon I", GOOD.."-8% medical kit cooldown",
-																-4,			6,					{SKILL_NONE, SKILL_SURGEON2}, TREE_SUPPORTTREE)
-GM:AddSkill(SKILL_SURGEON2, "Surgeon II", GOOD.."-9% medical kit cooldown",
-																-3,			3,					{SKILL_WORTHINESS4, SKILL_SURGEON3}, TREE_SUPPORTTREE)
-GM:AddSkill(SKILL_SURGEON3, "Surgeon III", GOOD.."-10% medical kit cooldown",
-																-2,			0,					{SKILL_U_MEDICCLOUD, SKILL_D_FRAIL, SKILL_SURGEONIV}, TREE_SUPPORTTREE)
-GM:AddSkill(SKILL_SURGEONIV, "Surgeon IV", GOOD.."-11% medical kit cooldown",
-																-2,			-3,					{}, TREE_SUPPORTTREE)
-GM:AddSkill(SKILL_BIOLOGYI, "Biology I", GOOD.."+8% medic tool effectiveness",
-																4,			6,					{SKILL_NONE, SKILL_BIOLOGYII}, TREE_SUPPORTTREE)
-GM:AddSkill(SKILL_BIOLOGYII, "Biology II", GOOD.."+9% medic tool effectiveness",
-																3,			3,					{SKILL_BIOLOGYIII, SKILL_SMARTTARGETING}, TREE_SUPPORTTREE)
-GM:AddSkill(SKILL_BIOLOGYIII, "Biology III", GOOD.."+10% medic tool effectiveness",
-																2,			0,					{SKILL_U_MEDICCLOUD, SKILL_U_ANTITODESHOT, SKILL_BIOLOGYIV}, TREE_SUPPORTTREE)
-GM:AddSkill(SKILL_BIOLOGYIV, "Biology IV", GOOD.."+11% medic tool effectiveness",
-																2,			-3,					{}, TREE_SUPPORTTREE)
-GM:AddSkill(SKILL_D_FRAIL, "Debuff: Frail", GOOD.."+20 starting Worth\n"..GOOD.."+5 starting points\n"..BAD.."Cannot be healed above 25% health",
-																-4,			-2,					{}, TREE_SUPPORTTREE)
-GM:AddSkill(SKILL_U_MEDICCLOUD, "Unlock: Medic Cloud Bomb", GOOD.."Unlocks purchasing the Medic Cloud Bomb\nSlowly heals all humans inside the cloud",
-																0,			-2,					{SKILL_DISPERSION}, TREE_SUPPORTTREE)
-.AlwaysActive = true
-GM:AddSkill(SKILL_SMARTTARGETING, "Smart Targeting", GOOD.."Medical weapon darts lock onto targets with right click\n"..BAD.."+75% medic tool fire delay\n"..BAD.."-30% healing effectiveness on medical darts",
-																0,			2,					{}, TREE_SUPPORTTREE)
-GM:AddSkill(SKILL_RECLAIMSOL, "Recoverable Solution", GOOD.."60% of wasted medical dart ammo is returned to you\n"..BAD.."+150% medic tool fire delay\n"..BAD.."-40% medic tool reload speed\n"..BAD.."Cannot speed boost full health players",
-																0,			4,					{SKILL_SMARTTARGETING}, TREE_SUPPORTTREE)
-GM:AddSkill(SKILL_U_STRENGTHSHOT, "Unlock: Strength Shot Gun", GOOD.."Unlocks purchasing the Strength Shot Gun\nTarget damage +25% for 10 seconds\nExtra damage is given to you as points\nTarget is not healed",
-																0,			0,					{SKILL_SMARTTARGETING}, TREE_SUPPORTTREE)
-GM:AddSkill(SKILL_WORTHINESS4, "Worthiness IV", GOOD.."+5 starting worth\n"..BAD.."-3 starting points",
-																-5,			2,					{}, TREE_SUPPORTTREE)
-GM:AddSkill(SKILL_U_ANTITODESHOT, "Unlock: Antidote Handgun", GOOD.."Unlocks purchasing the Antidote Handgun\nFires piercing blasts that heal poison greatly\nCleanses statuses from targets with a small point gain\nDoes not heal health",
-																4,			-2,					{}, TREE_SUPPORTTREE)
-GM:AddSkill(SKILL_DISPERSION, "Dispersion", GOOD.."+15% cloud bomb radius\n"..BAD.."-10% cloud bomb time",
-																0,			-4,					{}, TREE_SUPPORTTREE)
+GM:AddSkill(SKILL_SURGEON1, "Хирург I", GOOD.."-8% к задержке использования аптечки",
+                                                                -4,         6,                  {SKILL_NONE, SKILL_SURGEON2}, TREE_SUPPORTTREE)
+GM:AddSkill(SKILL_SURGEON2, "Хирург II", GOOD.."-9% к задержке использования аптечки",
+                                                                -3,         3,                  {SKILL_WORTHINESS4, SKILL_SURGEON3}, TREE_SUPPORTTREE)
+GM:AddSkill(SKILL_SURGEON3, "Хирург III", GOOD.."-10% к задержке использования аптечки",
+                                                                -2,         0,                  {SKILL_U_MEDICCLOUD, SKILL_D_FRAIL, SKILL_SURGEONIV}, TREE_SUPPORTTREE)
+GM:AddSkill(SKILL_SURGEONIV, "Хирург IV", GOOD.."-11% к задержке использования аптечки",
+                                                                -2,         -3,                 {}, TREE_SUPPORTTREE)
+GM:AddSkill(SKILL_BIOLOGYI, "Биология I", GOOD.."+8% к эффективности мед. инструментов",
+                                                                4,          6,                  {SKILL_NONE, SKILL_BIOLOGYII}, TREE_SUPPORTTREE)
+GM:AddSkill(SKILL_BIOLOGYII, "Биология II", GOOD.."+9% к эффективности мед. инструментов",
+                                                                3,          3,                  {SKILL_BIOLOGYIII, SKILL_SMARTTARGETING}, TREE_SUPPORTTREE)
+GM:AddSkill(SKILL_BIOLOGYIII, "Биология III", GOOD.."+10% к эффективности мед. инструментов",
+                                                                2,          0,                  {SKILL_U_MEDICCLOUD, SKILL_U_ANTITODESHOT, SKILL_BIOLOGYIV}, TREE_SUPPORTTREE)
+GM:AddSkill(SKILL_BIOLOGYIV, "Биология IV", GOOD.."+11% к эффективности мед. инструментов",
+                                                                2,          -3,                 {}, TREE_SUPPORTTREE)
+GM:AddSkill(SKILL_D_FRAIL, "Дебафф: Хрупкость", GOOD.."+20 к начальной ценности\n"..GOOD.."+5 к стартовым очкам\n"..BAD.."Ваше здоровье невозможно исцелить выше 25%",
+                                                                -4,         -2,                 {}, TREE_SUPPORTTREE)
+GM:AddSkill(SKILL_U_MEDICCLOUD, "Разблокировка: Лечебная дымовая бомба", GOOD.."Открывает покупку Лечебной дымовой бомбы\nМедленно исцеляет всех людей внутри облака",
+                                                                0,          -2,                 {SKILL_DISPERSION}, TREE_SUPPORTTREE).AlwaysActive = true
+GM:AddSkill(SKILL_SMARTTARGETING, "Умное наведение", GOOD.."Дротики медицинского оружия наводятся на цель при нажатии ПКМ\n"..BAD.."+75% к задержке выстрела мед. инструментов\n"..BAD.."-30% к эффективности исцеления медицинских дротиков",
+                                                                0,          2,                  {}, TREE_SUPPORTTREE)
+GM:AddSkill(SKILL_RECLAIMSOL, "Восполняемый раствор", GOOD.."60% промахнувшихся медицинских дротиков возвращаются вам\n"..BAD.."+150% к задержке выстрела мед. инструментов\n"..BAD.."-40% к скорости перезарядки мед. инструментов\n"..BAD.."Нельзя дать ускорение игрокам с полным здоровьем",
+                                                                0,          4,                  {SKILL_SMARTTARGETING}, TREE_SUPPORTTREE)
+GM:AddSkill(SKILL_U_STRENGTHSHOT, "Разблокировка: Пистолет стимуляции", GOOD.."Открывает покупку Пистолета стимуляции\nУрон цели увеличивается на +25% на 10 секунд\nДополнительный нанесенный урон конвертируется вам в очки\nЦель не получает исцеления",
+                                                                0,          0,                  {SKILL_SMARTTARGETING}, TREE_SUPPORTTREE)
+GM:AddSkill(SKILL_WORTHINESS4, "Ценность IV", GOOD.."+5 к начальной ценности\n"..BAD.."-3 к стартовым очкам",
+                                                                -5,         2,                  {}, TREE_SUPPORTTREE)
+GM:AddSkill(SKILL_U_ANTITODESHOT, "Разблокировка: Антидотный пистолет", GOOD.."Открывает покупку Антидотного пистолета\nСтреляет пробивающими зарядами, которые отлично излечивают яд\nОчищает цели от негативных эффектов, принося немного очков\nНе восстанавливает обычное здоровье",
+                                                                4,          -2,                 {}, TREE_SUPPORTTREE)
+GM:AddSkill(SKILL_DISPERSION, "Дисперсия", GOOD.."+15% к радиусу действия дымовой бомбы\n"..BAD.."-10% к длительности действия дымовой бомбы",
+                                                                0,          -4,                 {}, TREE_SUPPORTTREE)
 
 -- Defence Tree
-GM:AddSkill(SKILL_HANDY1, "Handy I", GOOD.."+4% repair rate",
-																-5,			-6,					{SKILL_NONE, SKILL_HANDY2}, TREE_BUILDINGTREE)
-GM:AddSkill(SKILL_HANDY2, "Handy II", GOOD.."+5% repair rate",
-																-5,			-4,					{SKILL_HANDY3, SKILL_U_BLASTTURRET, SKILL_LOADEDHULL}, TREE_BUILDINGTREE)
-GM:AddSkill(SKILL_HANDY3, "Handy III", GOOD.."+6% repair rate",
-																-5,			-1,					{SKILL_TAUT, SKILL_HAMMERDISCIPLINE, SKILL_D_NOODLEARMS, SKILL_HANDY4}, TREE_BUILDINGTREE)
-GM:AddSkill(SKILL_HANDY4, "Handy IV", GOOD.."+7% repair rate",
-																-3,			1,					{SKILL_HANDY5}, TREE_BUILDINGTREE)
-GM:AddSkill(SKILL_HANDY5, "Handy V", GOOD.."+8% repair rate",
-																-3,			3,					{}, TREE_BUILDINGTREE)
-GM:AddSkill(SKILL_HAMMERDISCIPLINE, "Hammer Discipline", GOOD.."-20% swing delay with the Carpenter Hammer",
-																0,			1,					{SKILL_BARRICADEEXPERT}, TREE_BUILDINGTREE)
-GM:AddSkill(SKILL_BARRICADEEXPERT, "Reinforcer", GOOD.."Props hit with a hammer in the last 2 seconds take 8% less damage\n"..GOOD.."Gain points from protected props\n"..BAD.."+30% swing delay with the Carpenter Hammer",
-																0,			3,					{}, TREE_BUILDINGTREE)
-GM:AddSkill(SKILL_LOADEDHULL, "Loaded Hull", GOOD.."Controllables explode when destroyed, dealing explosive damage\n"..BAD.."-10% Controllable health",
-																-2,			-4,					{SKILL_REINFORCEDHULL, SKILL_REINFORCEDBLADES, SKILL_AVIATOR}, TREE_BUILDINGTREE)
-GM:AddSkill(SKILL_REINFORCEDHULL, "Reinforced Hull", GOOD.."+25% Controllable health\n"..BAD.."-20% Controllable handling\n"..BAD.."-20% Controllable speed",
-																-2,			-2,					{SKILL_STABLEHULL}, TREE_BUILDINGTREE)
-GM:AddSkill(SKILL_STABLEHULL, "Stable Hull", GOOD.."Controllables are immune to high speed impacts\n"..BAD.."-20% Controllable speed",
-																0,			-3,					{SKILL_U_DRONE}, TREE_BUILDINGTREE)
-GM:AddSkill(SKILL_REINFORCEDBLADES, "Reinforced Blades", GOOD.."+25% Manhack damage\n"..BAD.."-15% Manhack health",
-																0,			-5,					{}, TREE_BUILDINGTREE)
-GM:AddSkill(SKILL_AVIATOR, "Aviator", GOOD.."+40% Controllable speed and handling\n"..BAD.."-25% Controllable health",
-																-4,			-2,					{}, TREE_BUILDINGTREE)
-GM:AddSkill(SKILL_U_BLASTTURRET, "Unlock: Blast Turret", GOOD.."Unlocks purchasing the Blast Turret\nFires buckshot instead of SMG ammo\nDamage is higher close up\nCannot scan for targets far away",
-																-8,			-4,					{SKILL_TURRETLOCK, SKILL_TWINVOLLEY, SKILL_TURRETOVERLOAD}, TREE_BUILDINGTREE)
-.AlwaysActive = true
-GM:AddSkill(SKILL_TURRETLOCK, "Turret Lock", "-90% turret scan angle\n"..BAD.."-90% turret target lock angle",
-																-6,			-2,					{}, TREE_BUILDINGTREE)
-GM:AddSkill(SKILL_TWINVOLLEY, "Twin Volley", GOOD.."Fire twice as many bullets in manual turret mode\n"..BAD.."+100% turret ammo usage in manual turret mode\n"..BAD.."+50% turret fire delay in manual turret mode",
-																-10,		-5,					{}, TREE_BUILDINGTREE)
-GM:AddSkill(SKILL_TURRETOVERLOAD, "Turret Overload", GOOD.." +100% Turret scan speed\n"..BAD.."-30% Turret range",
-																-8,			-2,					{SKILL_INSTRUMENTS}, TREE_BUILDINGTREE)
-GM:AddSkill(SKILL_U_DRONE, "Unlock: Pulse Drone", GOOD.."Unlocks the Pulse Drone Variant\nFires short range pulse projectiles instead of bullets",
-																2,			-3,					{SKILL_HAULMODULE, SKILL_U_ROLLERMINE}, TREE_BUILDINGTREE)
-.AlwaysActive = true
-GM:AddSkill(SKILL_U_NANITECLOUD, "Unlock: Nanite Cloud Bomb", GOOD.."Unlocks purchasing the Nanite Cloud Bomb\nSlowly repairs all props and deployables inside the cloud",
-																3,			1,					{SKILL_HAMMERDISCIPLINE}, TREE_BUILDINGTREE)
-.AlwaysActive = true
-GM:AddSkill(SKILL_FIELDAMP, "Field Amplifier", GOOD.."-20% zapper and repair field delay\n"..BAD.."-40% zapper and repair field range",
-																6,			4,					{}, TREE_BUILDINGTREE)
-GM:AddSkill(SKILL_TECHNICIAN, "Field Technician", GOOD.." +3% zapper and repair field range\n"..GOOD.."-3% zapper and repair field delay",
-																4,			3,					{}, TREE_BUILDINGTREE)
-GM:AddSkill(SKILL_U_ROLLERMINE, "Unlock: Rollermine", GOOD.."Unlocks purchasing Rollermines\nRolls along the ground, shocking zombies and dealing damage",
-																3,			-5,					{}, TREE_BUILDINGTREE)
-GM:AddSkill(SKILL_HAULMODULE, "Unlock: Hauling Drone", GOOD.."Unlocks the Hauling Drone\nRapidly transports props and items but cannot attack",
-																2,			-1,					{SKILL_U_NANITECLOUD}, TREE_BUILDINGTREE)
-GM:AddSkill(SKILL_LIGHTCONSTRUCT, "Light Construction", GOOD.."-25% deployable pack time\n"..BAD.."-25% deployable health",
-																8,			-1,					{}, TREE_BUILDINGTREE)
-GM:AddSkill(SKILL_STOCKPILE, "Stockpiling", GOOD.."Collect twice as much from resupplies\n"..BAD.."2.12x resupply box delay",
-																8,			-3,					{}, TREE_BUILDINGTREE)
-GM:AddSkill(SKILL_ACUITY, "Supplier's Acuity", GOOD.."Locate nearby resupply boxes if behind walls\n"..GOOD.."Locate nearby unplaced resupply boxes on players through walls\n"..GOOD.."Locate nearby resupply packs through walls",
-																6,			-3,					{SKILL_INSIGHT, SKILL_STOCKPILE, SKILL_U_CRAFTINGPACK, SKILL_STOWAGE}, TREE_BUILDINGTREE)
-GM:AddSkill(SKILL_VISION, "Refiner's Vision", GOOD.."Locate nearby remantlers if behind walls\n"..GOOD.."Locate nearby unplaced remantlers on players through walls",
-																6,			-6,					{SKILL_NONE, SKILL_ACUITY}, TREE_BUILDINGTREE)
-GM:AddSkill(SKILL_U_ROCKETTURRET, "Unlock: Rocket Turret", GOOD.."Unlocks purchasing the Rocket Turret\nFires explosives instead of SMG ammo\nDeals damage in a radius\nHigh tier deployable",
-																-8,			-0,					{SKILL_TURRETOVERLOAD}, TREE_BUILDINGTREE)
-GM:AddSkill(SKILL_INSIGHT, "Buyer's Insight", GOOD.."Locate nearby arsenal crates if behind walls\n"..GOOD.."Locate nearby unplaced arsenal crates on players through walls\n"..GOOD.."Locate nearby arsenal packs through walls",
-																6,			-0,					{SKILL_U_NANITECLOUD, SKILL_U_ZAPPER_ARC, SKILL_LIGHTCONSTRUCT, SKILL_D_LATEBUYER}, TREE_BUILDINGTREE)
-.AlwaysActive = true
-GM:AddSkill(SKILL_U_ZAPPER_ARC, "Unlock: Arc Zapper", GOOD.."Unlocks purchasing the Arc Zapper\nZaps zombies that get nearby, and jumps in an arc\nMid tier deployable and long cooldown\nRequires a steady upkeep of pulse ammo",
-																6,			2,					{SKILL_FIELDAMP, SKILL_TECHNICIAN}, TREE_BUILDINGTREE)
-.AlwaysActive = true
-GM:AddSkill(SKILL_D_LATEBUYER, "Debuff: Late Buyer", GOOD.."+20 starting Worth\n"..GOOD.."2% arsenal discount\n"..BAD.."Unable to use points at arsenal crates until the second half of the round",
-																8,			1,					{}, TREE_BUILDINGTREE)
-GM:AddSkill(SKILL_U_CRAFTINGPACK, "Unlock: Crafting Pack", GOOD.."Unlocks purchasing the Sawblade component\n"..GOOD.."Unlocks purchasing the Electrobattery component\n"..GOOD.."Unlocks purchasing the CPU Parts component",
-																4,			-1,					{}, TREE_BUILDINGTREE)
-.AlwaysActive = true
-GM:AddSkill(SKILL_TAUT, "Taut", GOOD.."Damage does not make you drop props\n"..BAD.."+40% prop carrying slow down",
-																-5,			3,					{}, TREE_BUILDINGTREE)
-GM:AddSkill(SKILL_D_NOODLEARMS, "Debuff: Noodle Arms", GOOD.."+5 starting Worth\n"..GOOD.."+1 starting scrap\n"..BAD.."Unable to pick up objects",
-																-7,			2,					{}, TREE_BUILDINGTREE)
-GM:AddSkill(SKILL_INSTRUMENTS, "Instruments", GOOD.."+5% turret range",
-																-10,		-3,					{}, TREE_BUILDINGTREE)
-GM:AddSkill(SKILL_STOWAGE, 	"Stowage", GOOD.."Resupply usages build up when you're not there\n"..BAD.."+15% resupply delay",
-																4,			-3,					{}, TREE_BUILDINGTREE)
+GM:AddSkill(SKILL_HANDY1, "Умелец I", GOOD.."+4% к скорости ремонта",
+                                                                -5,         -6,                 {SKILL_NONE, SKILL_HANDY2}, TREE_BUILDINGTREE)
+GM:AddSkill(SKILL_HANDY2, "Умелец II", GOOD.."+5% к скорости ремонта",
+                                                                -5,         -4,                 {SKILL_HANDY3, SKILL_U_BLASTTURRET, SKILL_LOADEDHULL}, TREE_BUILDINGTREE)
+GM:AddSkill(SKILL_HANDY3, "Умелец III", GOOD.."+6% к скорости ремонта",
+                                                                -5,         -1,                 {SKILL_TAUT, SKILL_HAMMERDISCIPLINE, SKILL_D_NOODLEARMS, SKILL_HANDY4}, TREE_BUILDINGTREE)
+GM:AddSkill(SKILL_HANDY4, "Умелец IV", GOOD.."+7% к скорости ремонта",
+                                                                -3,         1,                  {SKILL_HANDY5}, TREE_BUILDINGTREE)
+GM:AddSkill(SKILL_HANDY5, "Умелец V", GOOD.."+8% к скорости ремонта",
+                                                                -3,         3,                  {}, TREE_BUILDINGTREE)
+GM:AddSkill(SKILL_HAMMERDISCIPLINE, "Владение молотом", GOOD.."-20% к задержке взмаха Плотницким молотом",
+                                                                0,          1,                  {SKILL_BARRICADEEXPERT}, TREE_BUILDINGTREE)
+GM:AddSkill(SKILL_BARRICADEEXPERT, "Укрепитель", GOOD.."Пропсы, по которым ударили молотом в последние 2 сек., получают на 8% меньше урона\n"..GOOD.."Получаете очки за защиту пропсов\n"..BAD.."+30% к задержке взмаха Плотницким молотом",
+                                                                0,          3,                  {}, TREE_BUILDINGTREE)
+GM:AddSkill(SKILL_LOADEDHULL, "Заряженный корпус", GOOD.."Управляемая техника взрывается при уничтожении, нанося урон взрывом\n"..BAD.."-10% к здоровью управляемой техники",
+                                                                -2,         -4,                 {SKILL_REINFORCEDHULL, SKILL_REINFORCEDBLADES, SKILL_AVIATOR}, TREE_BUILDINGTREE)
+GM:AddSkill(SKILL_REINFORCEDHULL, "Усиленный корпус", GOOD.."+25% к здоровью управляемой техники\n"..BAD.."-20% к управляемости техники\n"..BAD.."-20% к скорости техники",
+                                                                -2,         -2,                 {SKILL_STABLEHULL}, TREE_BUILDINGTREE)
+GM:AddSkill(SKILL_STABLEHULL, "Стабильный корпус", GOOD.."Управляемая техника не получает урон от столкновений на высокой скорости\n"..BAD.."-20% к скорости техники",
+                                                                0,          -3,                 {SKILL_U_DRONE}, TREE_BUILDINGTREE)
+GM:AddSkill(SKILL_REINFORCEDBLADES, "Усиленные лопасти", GOOD.."+25% к урону мэнхэка\n"..BAD.."-15% к здоровью мэнхэка",
+                                                                0,          -5,                 {}, TREE_BUILDINGTREE)
+GM:AddSkill(SKILL_AVIATOR, "Авиатор", GOOD.."+40% к скорости и управляемости техники\n"..BAD.."-25% к здоровью управляемой техники",
+                                                                -4,         -2,                 {}, TREE_BUILDINGTREE)
+GM:AddSkill(SKILL_U_BLASTTURRET, "Разблокировка: Дробовая турель", GOOD.."Открывает покупку Дробовой турели\nСтреляет дробью вместо пистолетных патронов\nУрон выше на близкой дистанции\nНе может сканировать далекие цели",
+                                                                -8,         -4,                 {SKILL_TURRETLOCK, SKILL_TWINVOLLEY, SKILL_TURRETOVERLOAD}, TREE_BUILDINGTREE).AlwaysActive = true
+GM:AddSkill(SKILL_TURRETLOCK, "Фиксация турели", "-90% к углу сканирования турели\n"..BAD.."-90% к углу захвата цели турелью",
+                                                                -6,         -2,                 {}, TREE_BUILDINGTREE)
+GM:AddSkill(SKILL_TWINVOLLEY, "Двойной залп", GOOD.."Выпускает в два раза больше пуль в ручном режиме турели\n"..BAD.."+100% к расходу патронов турели в ручном режиме\n"..BAD.."+50% к задержке выстрела турели в ручном режиме",
+                                                                -10,        -5,                 {}, TREE_BUILDINGTREE)
+GM:AddSkill(SKILL_TURRETOVERLOAD, "Перегрузка турели", GOOD.."+100% к скорости сканирования турели\n"..BAD.."-30% к дальности атаки турели",
+                                                                -8,         -2,                 {SKILL_INSTRUMENTS}, TREE_BUILDINGTREE)
+GM:AddSkill(SKILL_U_DRONE, "Разблокировка: Импульсный дрон", GOOD.."Открывает модификацию «Импульсный дрон»\nСтреляет коротко дистанционными импульсными снарядами вместо пуль",
+                                                                2,          -3,                 {SKILL_HAULMODULE, SKILL_U_ROLLERMINE}, TREE_BUILDINGTREE).AlwaysActive = true
+GM:AddSkill(SKILL_U_NANITECLOUD, "Разблокировка: Нанитовая дымовая бомба", GOOD.."Открывает покупку Нанитовой дымовой бомбы\nМедленно ремонтирует все пропсы и постройки внутри облака",
+                                                                3,          1,                  {SKILL_HAMMERDISCIPLINE}, TREE_BUILDINGTREE).AlwaysActive = true
+GM:AddSkill(SKILL_FIELDAMP, "Полевой усилитель", GOOD.."-20% к задержке поля заземлителя и ремонта\n"..BAD.."-40% к радиусу поля заземлителя и ремонта",
+                                                                6,          4,                  {}, TREE_BUILDINGTREE)
+GM:AddSkill(SKILL_TECHNICIAN, "Полевой техник", GOOD.."+3% к радиусу поля заземлителя и ремонта\n"..GOOD.."-3% к задержке поля заземлителя и ремонта",
+                                                                4,          3,                  {}, TREE_BUILDINGTREE)
+GM:AddSkill(SKILL_U_ROLLERMINE, "Разблокировка: Роллермайн", GOOD.."Открывает покупку Роллермайнов\nКатится по земле, бьет зомби током и наносит урон",
+                                                                3,          -5,                 {}, TREE_BUILDINGTREE)
+GM:AddSkill(SKILL_HAULMODULE, "Разблокировка: Грузовой дрон", GOOD.."Открывает модификацию «Грузовой дрон»\nБыстро перевозит пропсы и предметы, но не может атаковать",
+                                                                2,          -1,                 {SKILL_U_NANITECLOUD}, TREE_BUILDINGTREE)
+GM:AddSkill(SKILL_LIGHTCONSTRUCT, "Легкая сборка", GOOD.."-25% ко времени сворачивания построек\n"..BAD.."-25% к здоровью построек",
+                                                                8,          -1,                 {}, TREE_BUILDINGTREE)
+GM:AddSkill(SKILL_STOCKPILE, "Накопительство", GOOD.."Сбор в два раза больше припасов из ящиков снабжения\n"..BAD.."В 2.12 раза дольше задержка использования ящика снабжения",
+                                                                8,          -3,                 {}, TREE_BUILDINGTREE)
+GM:AddSkill(SKILL_ACUITY, "Чутье поставщика", GOOD.."Подсвечивает ближайшие ящики снабжения за стенами\n"..GOOD.."Подсвечивает неразвернутые ящики снабжения у игроков за стенами\n"..GOOD.."Подсвечивает брошенные сумки со снабжением за стенами",
+                                                                6,          -3,                 {SKILL_INSIGHT, SKILL_STOCKPILE, SKILL_U_CRAFTINGPACK, SKILL_STOWAGE}, TREE_BUILDINGTREE)
+GM:AddSkill(SKILL_VISION, "Зрение переработчика", GOOD.."Подсвечивает ближайшие утилизаторы за стенами\n"..GOOD.."Подсвечивает неразвернутые утилизаторы у игроков за стенами",
+                                                                6,          -6,                 {SKILL_NONE, SKILL_ACUITY}, TREE_BUILDINGTREE)
+GM:AddSkill(SKILL_U_ROCKETTURRET, "Разблокировка: Ракетная турель", GOOD.."Открывает покупку Ракетной турели\nСтреляет ракетами вместо пистолетных патронов\nНаносит урон по радиусу. Высокотехнологичная постройка",
+                                                                -8,         -0,                 {SKILL_TURRETOVERLOAD}, TREE_BUILDINGTREE)
+GM:AddSkill(SKILL_INSIGHT, "Чутье покупателя", GOOD.."Подсвечивает ближайшие ящики арсенала за стенами\n"..GOOD.."Подсвечивает неразвернутые ящики арсенала у игроков за стенами\n"..GOOD.."Подсвечивает брошенные сумки арсенала за стенами",
+                                                                6,          -0,                 {SKILL_U_NANITECLOUD, SKILL_U_ZAPPER_ARC, SKILL_LIGHTCONSTRUCT, SKILL_D_LATEBUYER}, TREE_BUILDINGTREE).AlwaysActive = true
+GM:AddSkill(SKILL_U_ZAPPER_ARC, "Разблокировка: Дуговой заземлитель", GOOD.."Открывает покупку Дугового заземлителя\nБьет током зомби поблизости, разряд перескакивает по цепи\nПостройка среднего тира с долгой перезарядкой. Требует постоянного снабжения импульсными патронами",
+                                                                6,          2,                  {SKILL_FIELDAMP, SKILL_TECHNICIAN}, TREE_BUILDINGTREE).AlwaysActive = true
+GM:AddSkill(SKILL_D_LATEBUYER, "Дебафф: Поздний покупатель", GOOD.."+20 к начальной ценности\n"..GOOD.."2% скидка в арсенале\n"..BAD.."Невозможно использовать очки в ящиках арсенала до второй половины раунда",
+                                                                8,          1,                  {}, TREE_BUILDINGTREE)
+GM:AddSkill(SKILL_U_CRAFTINGPACK, "Разблокировка: Набор крафта", GOOD.."Открывает покупку компонента «Диск пилы»\n"..GOOD.."Открывает покупку компонента «Электробатарея»\n"..GOOD.."Открывает покупку компонента «Процессорные детали»",
+                                                                4,          -1,                 {}, TREE_BUILDINGTREE).AlwaysActive = true
+GM:AddSkill(SKILL_TAUT, "Натяжение", GOOD.."Получение урона больше не заставляет вас ронять пропсы\n"..BAD.."+40% к замедлению при переноске пропсов",
+                                                                -5,         3,                  {}, TREE_BUILDINGTREE)
+GM:AddSkill(SKILL_D_NOODLEARMS, "Дебафф: Руки-макаронины", GOOD.."+5 к начальной ценности\n"..GOOD.."+1 к начальному металлолому\n"..BAD.."Вы не можете подбирать физические объекты руками",
+                                                                -7,         2,                  {}, TREE_BUILDINGTREE)
+GM:AddSkill(SKILL_INSTRUMENTS, "Инструменты", GOOD.."+5% к дальности атаки турелей",
+                                                                -10,        -3,                 {}, TREE_BUILDINGTREE)
+GM:AddSkill(SKILL_STOWAGE, "Накопление ящика", GOOD.."Заряды использования ящика снабжения накапливаются, пока вас нет рядом\n"..BAD.."+15% к задержке использования ящика снабжения",
+                                                                4,          -3,                 {}, TREE_BUILDINGTREE)
 
 -- Gunnery Tree
-GM:AddSkill(SKILL_TRIGGER_DISCIPLINE1, "Trigger Discipline I", GOOD.."+2% weapon reload speed\n"..GOOD.."+2% weapon draw speed",
-																-5,			6,					{SKILL_TRIGGER_DISCIPLINE2, SKILL_NONE}, TREE_GUNTREE)
-GM:AddSkill(SKILL_TRIGGER_DISCIPLINE2, "Trigger Discipline II", GOOD.."+3% weapon reload speed\n"..GOOD.."+3% weapon draw speed",
-																-4,			3,					{SKILL_TRIGGER_DISCIPLINE3, SKILL_D_PALSY, SKILL_EQUIPPED}, TREE_GUNTREE)
-GM:AddSkill(SKILL_TRIGGER_DISCIPLINE3, "Trigger Discipline III", GOOD.."+4% weapon reload speed\n"..GOOD.."+4% weapon draw speed",
-																-3,			0,					{SKILL_QUICKRELOAD, SKILL_QUICKDRAW, SKILL_WORTHINESS1, SKILL_EGOCENTRIC}, TREE_GUNTREE)
-GM:AddSkill(SKILL_D_PALSY, "Debuff: Palsy", GOOD.."+10 starting Worth\n"..GOOD.."-3% resupply delay\n"..BAD.."Aiming ability reduced when health is low",
-																0,			4,					{SKILL_LEVELHEADED}, TREE_GUNTREE)
-GM:AddSkill(SKILL_LEVELHEADED, "Level Headed", GOOD.."-5% reduced effect of aim shake effects",
-																-2,			2,					{}, TREE_GUNTREE)
-GM:AddSkill(SKILL_QUICKDRAW, "Quick Draw", GOOD.."+65% weapon draw speed\n"..BAD.."-15% weapon reload speed",
-																0,			1,					{}, TREE_GUNTREE)
-GM:AddSkill(SKILL_FOCUS, "Focus I", GOOD.."+3% tighter aiming reticule\n"..BAD.."-3% weapon reload speed",
-																5,			6,					{SKILL_NONE, SKILL_FOCUSII}, TREE_GUNTREE)
-GM:AddSkill(SKILL_FOCUSII, "Focus II", GOOD.."+4% tighter aiming reticule\n"..BAD.."-4% weapon reload speed",
-																4,			3,					{SKILL_FOCUSIII, SKILL_SCAVENGER, SKILL_D_PALSY, SKILL_PITCHER}, TREE_GUNTREE)
-GM:AddSkill(SKILL_FOCUSIII, "Focus III", GOOD.."+5% tighter aiming reticule\n"..BAD.."-5% weapon reload speed",
-																3,			0,					{SKILL_EGOCENTRIC, SKILL_WOOISM, SKILL_ORPHICFOCUS, SKILL_SCOURER}, TREE_GUNTREE)
-GM:AddSkill(SKILL_QUICKRELOAD, "Quick Reload", GOOD.."+10% weapon reload speed\n"..BAD.."-25% weapon draw speed",
-																-5,			1,					{SKILL_SLEIGHTOFHAND}, TREE_GUNTREE)
-GM:AddSkill(SKILL_SLEIGHTOFHAND, "Sleight of Hand", GOOD.."+10% weapon reload speed\n"..BAD.."-5% tighter aiming reticule",
-																-5,			-1,					{}, TREE_GUNTREE)
-GM:AddSkill(SKILL_U_CRYGASGREN, "Unlock: Cryo Gas Grenade", GOOD.."Unlocks purchasing the Cryo Gas Grenade\nVariant of the Corrosive Gas Grenade\nCryo gas deals a bit of damage over time\nZombies are slowed in the effect",
-																2,			-3,					{SKILL_EGOCENTRIC}, TREE_GUNTREE)
-GM:AddSkill(SKILL_SOFTDET, "Soft Detonation", GOOD.."-40% explosive damage taken\n"..BAD.."-10% explosive damage radius",
-																0,			-5,					{}, TREE_GUNTREE)
-GM:AddSkill(SKILL_ORPHICFOCUS, "Orphic Focus", GOOD.."90% spread while ironsighting\n"..GOOD.."+2% tighter aiming reticule\n"..BAD.."110% spread at any other time\n"..BAD.."-6% reload speed",
-																5,			-1,					{SKILL_DELIBRATION}, TREE_GUNTREE)
-GM:AddSkill(SKILL_DELIBRATION, "Delibration", GOOD.."+1% tighter aiming reticule",
-																6,			-3,					{}, TREE_GUNTREE)
-GM:AddSkill(SKILL_EGOCENTRIC, "Egocentric", GOOD.."-35% damage vs. yourself\n"..BAD.."-5 health",
-																0,			-1,					{SKILL_BLASTPROOF}, TREE_GUNTREE)
-GM:AddSkill(SKILL_BLASTPROOF, "Blast Proof", GOOD.."-45% damage vs. yourself\n"..BAD.."-7% reload speed\n"..BAD.."-12% weapon draw speed",
-																0,			-3,					{SKILL_SOFTDET, SKILL_CANNONBALL, SKILL_CONEFFECT}, TREE_GUNTREE)
-GM:AddSkill(SKILL_WOOISM, "Zeal", GOOD.."-50% speed reduction from being ironsighted\n"..BAD.."-25% accuracy bonus from ironsighting",
-																5,			1,					{SKILL_TRUEWOOISM}, TREE_GUNTREE)
-GM:AddSkill(SKILL_SCAVENGER, "Scavenger's Eyes", GOOD.."See nearby weapons, ammo, and items through walls",
-																7,			4,					{}, TREE_GUNTREE)
-GM:AddSkill(SKILL_PITCHER, "Pitcher", GOOD.."+10% object throw and thrown weapon velocity",
-																6,			2,					{}, TREE_GUNTREE)
-GM:AddSkill(SKILL_EQUIPPED, "Alacrity", GOOD.."Your starting item can be a random special trinket",
-																-6,			2,					{}, TREE_GUNTREE)
-GM:AddSkill(SKILL_WORTHINESS1, "Worthiness I", GOOD.."+5 starting worth\n"..BAD.."-3 starting points",
-																-4,			-3,					{}, TREE_GUNTREE)
-GM:AddSkill(SKILL_CANNONBALL, "Cannonball", "-25% projectile speed\n"..GOOD.."+3% projectile damage",
-																-2,			-3,					{}, TREE_GUNTREE)
-GM:AddSkill(SKILL_SCOURER, "Scourer", GOOD.."Earn end of wave points as scrap\n"..BAD.."Earn no end of wave points",
-																4,			-3,					{}, TREE_GUNTREE)
-GM:AddSkill(SKILL_CONEFFECT, "Concentrated Effect", GOOD.."+5% explosive damage\n"..BAD.."-20% explosive damage radius",
-																2,			-5,					{}, TREE_GUNTREE)
-GM:AddSkill(SKILL_TRUEWOOISM, "Wooism", GOOD.."No accuracy penalty from moving or jumping\n"..BAD.."No accuracy bonus from crouching or ironsighting",
-																7,			0,					{}, TREE_GUNTREE)
+GM:AddSkill(SKILL_TRIGGER_DISCIPLINE1, "Стрелковая подготовка I", GOOD.."+2% к скорости перезарядки оружия\n"..GOOD.."+2% к скорости снаряжения оружия",
+                                                                -5,         6,                  {SKILL_TRIGGER_DISCIPLINE2, SKILL_NONE}, TREE_GUNTREE)
+GM:AddSkill(SKILL_TRIGGER_DISCIPLINE2, "Стрелковая подготовка II", GOOD.."+3% к скорости перезарядки оружия\n"..GOOD.."+3% к скорости снаряжения оружия",
+                                                                -4,         3,                  {SKILL_TRIGGER_DISCIPLINE3, SKILL_D_PALSY, SKILL_EQUIPPED}, TREE_GUNTREE)
+GM:AddSkill(SKILL_TRIGGER_DISCIPLINE3, "Стрелковая подготовка III", GOOD.."+4% к скорости перезарядки оружия\n"..GOOD.."+4% к скорости снаряжения оружия",
+                                                                -3,         0,                  {SKILL_QUICKRELOAD, SKILL_QUICKDRAW, SKILL_WORTHINESS1, SKILL_EGOCENTRIC}, TREE_GUNTREE)
+GM:AddSkill(SKILL_D_PALSY, "Дебафф: Тряска рук", GOOD.."+10 к начальной ценности\n"..GOOD.."-3% к задержке ящика снабжения\n"..BAD.."Точность прицеливания снижается при низком уровне здоровья",
+                                                                0,          4,                  {SKILL_LEVELHEADED}, TREE_GUNTREE)
+GM:AddSkill(SKILL_LEVELHEADED, "Хладнокровие", GOOD.."-5% к эффекту дрожания прицела",
+                                                                -2,         2,                  {}, TREE_GUNTREE)
+GM:AddSkill(SKILL_QUICKDRAW, "Быстрое доставание", GOOD.."+65% к скорости снаряжения оружия\n"..BAD.."-15% к скорости перезарядки оружия",
+                                                                0,          1,                  {}, TREE_GUNTREE)
+GM:AddSkill(SKILL_FOCUS, "Фокусировка I", GOOD.."+3% к сужению прицела\n"..BAD.."-3% к скорости перезарядки оружия",
+                                                                5,          6,                  {SKILL_NONE, SKILL_FOCUSII}, TREE_GUNTREE)
+GM:AddSkill(SKILL_FOCUSII, "Фокусировка II", GOOD.."+4% к сужению прицела\n"..BAD.."-4% к скорости перезарядки оружия",
+                                                                4,          3,                  {SKILL_FOCUSIII, SKILL_SCAVENGER, SKILL_D_PALSY, SKILL_PITCHER}, TREE_GUNTREE)
+GM:AddSkill(SKILL_FOCUSIII, "Фокусировка III", GOOD.."+5% к сужению прицела\n"..BAD.."-5% к скорости перезарядки оружия",
+                                                                3,          0,                  {SKILL_EGOCENTRIC, SKILL_WOOISM, SKILL_ORPHICFOCUS, SKILL_SCOURER}, TREE_GUNTREE)
+GM:AddSkill(SKILL_QUICKRELOAD, "Быстрая перезарядка", GOOD.."+10% к скорости перезарядки оружия\n"..BAD.."-25% к скорости снаряжения оружия",
+                                                                -5,         1,                  {SKILL_SLEIGHTOFHAND}, TREE_GUNTREE)
+GM:AddSkill(SKILL_SLEIGHTOFHAND, "Ловкость рук", GOOD.."+10% к скорости перезарядки оружия\n"..BAD.."-5% к сужению прицела",
+                                                                -5,         -1,                 {}, TREE_GUNTREE)
+GM:AddSkill(SKILL_U_CRYGASGREN, "Разблокировка: Криогенная граната", GOOD.."Открывает покупку Криогенной гранаты\nМодификация Кислотной газовой гранаты\nКрио-газ наносит небольшой периодический урон\nЗомби в области действия замедляются",
+                                                                2,          -3,                 {SKILL_EGOCENTRIC}, TREE_GUNTREE)
+GM:AddSkill(SKILL_SOFTDET, "Мягкая детонация", GOOD.."-40% к получаемому урону от взрывов\n"..BAD.."-10% к радиусу поражения взрыва",
+                                                                0,          -5,                 {}, TREE_GUNTREE)
+GM:AddSkill(SKILL_ORPHICFOCUS, "Орфический фокус", GOOD.."Разброс 90% при прицеливании через мушку\n"..GOOD.."+2% к сужению прицела\n"..BAD.."Разброс 110% в любое другое время\n"..BAD.."-6% к скорости перезарядки",
+                                                                5,          -1,                 {SKILL_DELIBRATION}, TREE_GUNTREE)
+GM:AddSkill(SKILL_DELIBRATION, "Тщательность", GOOD.."+1% к сужению прицела",
+                                                                6,          -3,                 {}, TREE_GUNTREE)
+GM:AddSkill(SKILL_EGOCENTRIC, "Эгоцентризм", GOOD.."-35% к урону по самому себе\n"..BAD.."-5 к макс. здоровью",
+                                                                0,          -1,                 {SKILL_BLASTPROOF}, TREE_GUNTREE)
+GM:AddSkill(SKILL_BLASTPROOF, "Взрывостойкость", GOOD.."-45% к урону по самому себе\n"..BAD.."-7% к скорости перезарядки\n"..BAD.."-12% к скорости снаряжения оружия",
+                                                                0,          -3,                 {SKILL_SOFTDET, SKILL_CANNONBALL, SKILL_CONEFFECT}, TREE_GUNTREE)
+GM:AddSkill(SKILL_WOOISM, "Рвение", GOOD.."-50% к потере скорости при прицеливании через мушку\n"..BAD.."-25% к бонусу точности от прицеливания через мушку",
+                                                                5,          1,                  {SKILL_TRUEWOOISM}, TREE_GUNTREE)
+GM:AddSkill(SKILL_SCAVENGER, "Глаз мародёра", GOOD.."Подсвечивает ближайшее оружие, патроны и предметы за стенами",
+                                                                7,          4,                  {}, TREE_GUNTREE)
+GM:AddSkill(SKILL_PITCHER, "Подающий", GOOD.."+10% к скорости броска предметов и метательного оружия",
+                                                                6,          2,                  {}, TREE_GUNTREE)
+GM:AddSkill(SKILL_EQUIPPED, "Расторопность", GOOD.."Вашим стартовым предметом может стать случайный особый брелок",
+                                                                -6,         2,                  {}, TREE_GUNTREE)
+GM:AddSkill(SKILL_WORTHINESS1, "Ценность I", GOOD.."+5 к начальной ценности\n"..BAD.."-3 к стартовым очкам",
+                                                                -4,         -3,                 {}, TREE_GUNTREE)
+GM:AddSkill(SKILL_CANNONBALL, "Ядро", "-25% к скорости полета снаряда\n"..GOOD.."+3% к урону снаряда",
+                                                                -2,         -3,                 {}, TREE_GUNTREE)
+GM:AddSkill(SKILL_SCOURER, "Сборщик", GOOD.."Получаете очки конца волны в виде металлолома\n"..BAD.."Не получаете обычные очки в конце волны",
+                                                                4,          -3,                 {}, TREE_GUNTREE)
+GM:AddSkill(SKILL_CONEFFECT, "Концентрированный эффект", GOOD.."+5% к урону от взрывов\n"..BAD.."-20% к радиусу поражения взрыва",
+                                                                2,          -5,                 {}, TREE_GUNTREE)
+GM:AddSkill(SKILL_TRUEWOOISM, "Вуизм", GOOD.."Нет штрафа к точности при движении или прыжках\n"..BAD.."Нет бонуса к точности при приседании или прицеливании через мушку",
+                                                                7,          0,                  {}, TREE_GUNTREE)
 
 -- Melee Tree
-GM:AddSkill(SKILL_WORTHINESS2, "Worthiness II", GOOD.."+5 starting worth\n"..BAD.."-3 starting points",
-																4,			0,					{}, TREE_MELEETREE)
-GM:AddSkill(SKILL_BATTLER1, "Battler I", GOOD.."+4% melee damage",
-																-6,			-6,					{SKILL_BATTLER2, SKILL_NONE}, TREE_MELEETREE)
-GM:AddSkill(SKILL_BATTLER2, "Battler II", GOOD.."+5% melee damage",
-																-6,			-4,					{SKILL_BATTLER3, SKILL_LIGHTWEIGHT}, TREE_MELEETREE)
-GM:AddSkill(SKILL_BATTLER3, "Battler III", GOOD.."+5% melee damage",
-																-4,			-2,					{SKILL_BATTLER4, SKILL_LANKY}, TREE_MELEETREE)
-GM:AddSkill(SKILL_BATTLER4, "Battler IV", GOOD.."+6% melee damage",
-																-2,			0,					{SKILL_BATTLER5, SKILL_MASTERCHEF, SKILL_D_CLUMSY}, TREE_MELEETREE)
-GM:AddSkill(SKILL_BATTLER5, "Battler V", GOOD.."+7% melee damage",
-																0,			2,					{SKILL_GLASSWEAPONS, SKILL_BLOODLUST}, TREE_MELEETREE)
-GM:AddSkill(SKILL_LASTSTAND, "Last Stand", GOOD.."Double melee damage when below 25% health\n"..BAD.."0.85x melee weapon damage at any other time",
-																0,			6,					{}, TREE_MELEETREE)
-GM:AddSkill(SKILL_GLASSWEAPONS, "Glass Weapons", GOOD.."3.5x melee weapon damage vs. zombies\n"..BAD.."Your melee weapons have a 50% chance to break when hitting a zombie",
-																2,			4,					{}, TREE_MELEETREE)
-GM:AddSkill(SKILL_D_CLUMSY, "Debuff: Clumsy", GOOD.."+20 starting Worth\n"..GOOD.."+5 starting points\n"..BAD.."Very easy to be knocked down",
-																-2,			2,					{}, TREE_MELEETREE)
-GM:AddSkill(SKILL_CHEAPKNUCKLE, "Cheap Tactics", GOOD.."Slow targets when striking with a melee weapon from behind\n"..BAD.."-10% melee range",
-																4,			-2,					{SKILL_HEAVYSTRIKES, SKILL_WORTHINESS2}, TREE_MELEETREE)
-GM:AddSkill(SKILL_CRITICALKNUCKLE, "Critical Knuckle", GOOD.."Knockback when using unarmed strikes\n"..BAD.."-25% unarmed strike damage\n"..BAD.."+25% time before next unarmed strike",
-																6,			-2,					{SKILL_BRASH}, TREE_MELEETREE)
-GM:AddSkill(SKILL_KNUCKLEMASTER, "Knuckle Master", GOOD.."+75% unarmed strike damage\n"..GOOD.."Movement speed is no longer slower when using unarmed strikes\n"..BAD.."+35% time before next unarmed strike",
-																6,			-6,					{SKILL_NONE, SKILL_COMBOKNUCKLE}, TREE_MELEETREE)
-GM:AddSkill(SKILL_COMBOKNUCKLE, "Combo Knuckle", GOOD.."Next unarmed strike is 2x faster if hitting something\n"..BAD.."Next unarmed attack is 2x slower if not hitting something",
-																6,			-4,					{SKILL_CHEAPKNUCKLE, SKILL_CRITICALKNUCKLE}, TREE_MELEETREE)
-GM:AddSkill(SKILL_HEAVYSTRIKES, "Heavy Strikes", GOOD.."+100% melee knockback\n"..BAD.."8% of melee damage dealt is reflected back to you\n"..BAD.."100% reflected if using unarmed strikes",
-																2,			0,					{SKILL_BATTLER5, SKILL_JOUSTER}, TREE_MELEETREE)
-GM:AddSkill(SKILL_JOUSTER, "Jouster", GOOD.."+10% melee damage\n"..BAD.."-100% melee knockback",
-																2,			2,					{}, TREE_MELEETREE)
-GM:AddSkill(SKILL_LANKY, "Lanky I", GOOD.."+10% melee range\n"..BAD.."-15% melee damage",
-																-4,			0,					{SKILL_LANKYII}, TREE_MELEETREE)
-GM:AddSkill(SKILL_LANKYII, "Lanky II", GOOD.."+10% melee range\n"..BAD.."-15% melee damage",
-																-4,			2,					{}, TREE_MELEETREE)
-GM:AddSkill(SKILL_MASTERCHEF, "Master Chef", GOOD.."Zombies hit by culinary weapons in the past second have a chance to drop food items on death\n"..BAD.."-10% melee damage",
-																0,			-3,					{SKILL_BATTLER4}, TREE_MELEETREE)
-GM:AddSkill(SKILL_LIGHTWEIGHT, "Lightweight", GOOD.."+6 movement speed with a melee weapon equipped\n"..BAD.."-20% melee damage",
-																-6,			-2,					{}, TREE_MELEETREE)
-GM:AddSkill(SKILL_BLOODLUST, "Bloodlust", "Gain phantom health equal to half the damage taken from zombies\nLose phantom health equal to any healing received\nPhantom health decreases by 5 per second\n"..GOOD.."Heal 25% of damage done with melee from remaining phantom health\n"..BAD.."-50% healing received",
-																-2,			4,					{SKILL_LASTSTAND}, TREE_MELEETREE)
-GM:AddSkill(SKILL_BRASH, "Brash", GOOD.."-16% melee swing impact delay\n"..BAD.."-15 speed on melee kill for 10 seconds",
-																6,			0,					{}, TREE_MELEETREE)
+GM:AddSkill(SKILL_WORTHINESS2, "Ценность IО", GOOD.."+5 к начальной ценности\n"..BAD.."-3 к стартовым очкам",
+                                                                4,          0,                  {}, TREE_MELEETREE)
+GM:AddSkill(SKILL_BATTLER1, "Боец I", GOOD.."+4% к урону ближнего боя",
+                                                                -6,         -6,                 {SKILL_BATTLER2, SKILL_NONE}, TREE_MELEETREE)
+GM:AddSkill(SKILL_BATTLER2, "Боец II", GOOD.."+5% к урону ближнего боя",
+                                                                -6,         -4,                 {SKILL_BATTLER3, SKILL_LIGHTWEIGHT}, TREE_MELEETREE)
+GM:AddSkill(SKILL_BATTLER3, "Боец III", GOOD.."+5% к урону ближнего боя",
+                                                                -4,         -2,                 {SKILL_BATTLER4, SKILL_LANKY}, TREE_MELEETREE)
+GM:AddSkill(SKILL_BATTLER4, "Боец IV", GOOD.."+6% к урону ближнего боя",
+                                                                -2,         0,                  {SKILL_BATTLER5, SKILL_MASTERCHEF, SKILL_D_CLUMSY}, TREE_MELEETREE)
+GM:AddSkill(SKILL_BATTLER5, "Боец V", GOOD.."+7% к урону ближнего боя",
+                                                                0,          2,                  {SKILL_GLASSWEAPONS, SKILL_BLOODLUST}, TREE_MELEETREE)
+GM:AddSkill(SKILL_LASTSTAND, "Последний рубеж", GOOD.."Двойной урон ближнего боя, когда здоровье ниже 25%\n"..BAD.."0.85x к урону холодным оружием в любое другое время",
+                                                                0,          6,                  {}, TREE_MELEETREE)
+GM:AddSkill(SKILL_GLASSWEAPONS, "Хрупкое оружие", GOOD.."3.5x к урону холодным оружием по зомби\n"..BAD.."Ваше холодное оружие имеет 50% шанс сломаться при ударе по зомби",
+                                                                2,          4,                  {}, TREE_MELEETREE)
+GM:AddSkill(SKILL_D_CLUMSY, "Дебафф: Неуклюжий", GOOD.."+20 к начальной ценности\n"..GOOD.."+5 к стартовым очкам\n"..BAD.."Вас очень легко сбить с ног",
+                                                                -2,         2,                  {}, TREE_MELEETREE)
+GM:AddSkill(SKILL_CHEAPKNUCKLE, "Грязная тактика", GOOD.."Замедляет цели при ударе холодным оружием со спины\n"..BAD.."-10% к дальности атаки ближнего боя",
+                                                                4,          -2,                 {SKILL_HEAVYSTRIKES, SKILL_WORTHINESS2}, TREE_MELEETREE)
+GM:AddSkill(SKILL_CRITICALKNUCKLE, "Критический кулак", GOOD.."Отбрасывает врагов при ударах голыми руками\n"..BAD.."-25% к урону от ударов руками\n"..BAD.."+25% к задержке перед следующим ударом руками",
+                                                                6,          -2,                 {SKILL_BRASH}, TREE_MELEETREE)
+GM:AddSkill(SKILL_KNUCKLEMASTER, "Мастер рукопашной", GOOD.."+75% к урону от ударов руками\n"..GOOD.."Скорость движения больше не снижается при ударах руками\n"..BAD.."+35% к задержке перед следующим ударом руками",
+                                                                6,          -6,                 {SKILL_NONE, SKILL_COMBOKNUCKLE}, TREE_MELEETREE)
+GM:AddSkill(SKILL_COMBOKNUCKLE, "Серия ударов", GOOD.."Следующий удар руками выполняется в 2 раза быстрее при попадании по цели\n"..BAD.."Следующий удар руками выполняется в 2 раза медленнее при промахе",
+                                                                6,          -4,                 {SKILL_CHEAPKNUCKLE, SKILL_CRITICALKNUCKLE}, TREE_MELEETREE)
+GM:AddSkill(SKILL_HEAVYSTRIKES, "Тяжелые удары", GOOD.."+100% к отбрасыванию ближнего боя\n"..BAD.."8% от нанесенного урона ближнего боя возвращается вам в виде самоурона\n"..BAD.."100% возвращаемого урона при ударах голыми руками",
+                                                                2,          0,                  {SKILL_BATTLER5, SKILL_JOUSTER}, TREE_MELEETREE)
+GM:AddSkill(SKILL_JOUSTER, "Турнирный боец", GOOD.."+10% к урону ближнего боя\n"..BAD.."-100% к отбрасыванию ближнего боя",
+                                                                2,          2,                  {}, TREE_MELEETREE)
+GM:AddSkill(SKILL_LANKY, "Долговязый I", GOOD.."+10% к дальности атаки ближнего боя\n"..BAD.."-15% к урону ближнего боя",
+                                                                -4,         0,                  {SKILL_LANKYII}, TREE_MELEETREE)
+GM:AddSkill(SKILL_LANKYII, "Долговязый II", GOOD.."+10% к дальности атаки ближнего боя\n"..BAD.."-15% к урону ближнего боя",
+                                                                -4,         2,                  {}, TREE_MELEETREE)
+GM:AddSkill(SKILL_MASTERCHEF, "Шеф-повар", GOOD.."Зомби, атакованные кухонным оружием в последнюю секунду, с некоторым шансом оставляют еду после смерти\n"..BAD.."-10% к урону ближнего боя",
+                                                                0,          -3,                 {SKILL_BATTLER4}, TREE_MELEETREE)
+GM:AddSkill(SKILL_LIGHTWEIGHT, "Налегке", GOOD.."+6 к скорости движения, когда в руках холодное оружие\n"..BAD.."-20% к урону ближнего боя",
+                                                                -6,         -2,                 {}, TREE_MELEETREE)
+GM:AddSkill(SKILL_BLOODLUST, "Жажда крови", "Вы получаете фантомное здоровье в размере половины нанесенного вам зомби урона\nФантомное здоровье теряется при любом обычном лечении\nФантомное здоровье падает на 5 единиц в секунду\n"..GOOD.."Излечивает 25% от урона ближнего боя за счет оставшегося фантомного здоровья\n"..BAD.."-50% к получаемому лечению",
+                                                                -2,         4,                  {SKILL_LASTSTAND}, TREE_MELEETREE)
+GM:AddSkill(SKILL_BRASH, "Дерзость", GOOD.."-16% к задержке удара ближнего боя\n"..BAD.."-15 к скорости движения на 10 сек. после убийства в ближнем бою",
+                                                                6,          0,                  {}, TREE_MELEETREE)
 
 GM:SetSkillModifierFunction(SKILLMOD_SPEED, function(pl, amount)
 	pl.SkillSpeedAdd = amount
